@@ -10,7 +10,7 @@ export default async function Batizados() {
   const batizados = await res.json();
 
   return (
-    <div className="border border-neutral-300 flex flex-col gap-8 bg-neutral-200 max-w-sm mx-auto mt-8 p-8 rounded-xl">
+    <div className="border border-neutral-300 flex flex-col gap-8 bg-neutral-100 max-w-sm mx-auto mt-8 p-8 rounded-xl">
       {batizados.map((batizado: BatizadoType) => (
         <Batizado key={batizado.id} batizado={batizado} />
       ))}

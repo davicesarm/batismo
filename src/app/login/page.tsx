@@ -35,13 +35,13 @@ export default function Login() {
         height={250}
         className="mx-auto"
       />
-      <div className="border border-neutral-300 p-4 rounded-xl shadow max-w-sm mx-auto flex flex-col">
-        <h1 className="text-neutral-500 text-center text-4xl mt-8">Login</h1>
+      <div className="bg-neutral-50 border border-neutral-300 p-2 px-4 rounded-xl shadow-md max-w-[350px] mx-auto flex flex-col">
+        <h1 className="text-neutral-600 text-center text-4xl mt-8">Login</h1>
         <form
           onSubmit={handleSubmit}
           className="flex flex-col gap-4 mx-4 my-12">
           <input
-            className=" text-sm text-neutral-600 font-semibold border px-3 border-neutral-400 placeholder-shown:border-neutral-300 p-2 rounded-lg"
+            className="text-xs inset-shadow-sm text-neutral-600 font-semibold border px-3 border-neutral-400 placeholder-shown:border-neutral-300 p-2 rounded-lg"
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -49,7 +49,7 @@ export default function Login() {
           />
           <div className="flex flex-col">
             <input
-              className="text-sm text-neutral-600 font-semibold border px-3 border-neutral-400 placeholder-shown:border-neutral-300 p-2 rounded-lg"
+              className="text-xs inset-shadow-sm text-neutral-600 font-semibold border px-3 border-neutral-400 placeholder-shown:border-neutral-300 p-2 rounded-lg"
               type="password"
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
@@ -62,7 +62,7 @@ export default function Login() {
             </a>
           </div>
           <button
-            className="mt-4 bg-blue-400 text-white text-center border border-blue-500 hover:border-blue-600 hover:bg-blue-500 cursor-pointer text-sm p-2 font-bold rounded-lg"
+            className="mt-4 bg-blue-400 text-white text-center border border-blue-500 hover:border-blue-600 hover:bg-blue-500 cursor-pointer text-xs p-2 font-bold rounded-lg"
             type="submit">
             Entrar
           </button>
