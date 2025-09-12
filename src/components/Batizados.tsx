@@ -48,7 +48,7 @@ export default function Batizados() {
       <p className="text-center text-sm text-muted-foreground">
         Total de batizados: {batizadosFiltrados.length}
       </p>
-      <div className="border-b border-neutral-300 pb-4 flex justify-between items-end">
+      <div className="flex justify-between items-center">
         <DateRangePickerComp
           onChange={(range) => {
             if (range && range.start && range.end) {

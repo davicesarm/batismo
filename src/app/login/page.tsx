@@ -29,11 +29,11 @@ export default function Login() {
   return (
     <div className="px-4">
       <Image
-        src="/logo.png"
+        src="/transparent-logo.png"
         alt="Logo"
-        width={250}
-        height={250}
-        className="mx-auto"
+        width={180}
+        height={180}
+        className="mx-auto mt-4 mb-6"
       />
       <div className="bg-neutral-50 border border-neutral-300 p-2 px-4 rounded-xl shadow-md max-w-[350px] mx-auto flex flex-col">
         <h1 className="text-neutral-600 text-center text-4xl mt-8">Login</h1>
