@@ -5,8 +5,7 @@ import Batizado from "./Batizado";
 import { useState, useEffect } from "react";
 import DateRangePickerComp from "@/components/DateRangePickerComp";
 import { FaFileDownload } from "react-icons/fa";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+import { apiFetch } from "@/fetchWrapper";
 
 export default function Batizados() {
   const [batizados, setBatizados] = useState<BatizadoType[]>([]);
@@ -19,14 +18,14 @@ export default function Batizados() {
   }>({ start: null, end: null });
 
   useEffect(() => {
-    fetch(`${API_URL}/batizados`, {
+    apiFetch(`/batizados`, {
       cache: "no-store",
     })
       .then((res) => res.json())
       .then((batizados) => {
         setBatizados(batizados);
       });
-  }, [API_URL]);
+  }, []);
 
   useEffect(() => {
     if (!dateRange.start || !dateRange.end) {

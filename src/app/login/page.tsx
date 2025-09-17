@@ -19,8 +19,16 @@ export default function Login() {
       body: JSON.stringify({ email, senha }),
     });
 
+    type LoginResponse = {
+      accessToken: string;
+      expiresIn: number;
+    };
+
     if (res.ok) {
+      const data: LoginResponse = await res.json();
+      document.cookie = `accessToken=${data.accessToken}; path=/; max-age=${data.expiresIn}`; // 1 hour
       console.log("Login correto ✅");
+      document.location.href = "/";
     } else {
       console.error("Erro no login ❌");
     }

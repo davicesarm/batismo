@@ -3,14 +3,18 @@
 import { useEffect, useState } from "react";
 import { UsuarioType } from "@/types/usuario";
 import UsuarioTable from "./UsuarioTable";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+import { apiFetch } from "@/fetchWrapper";
 
 export default function Usuarios() {
   const [usuarios, setUsuarios] = useState<UsuarioType[]>([]);
 
   const fetchUsuarios = async () => {
-    const response = await fetch(`${API_URL}/usuarios`);
+    const response = await apiFetch(`/usuarios`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const data = await response.json();
     setUsuarios(data);
   };

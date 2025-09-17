@@ -28,7 +28,7 @@ export default function Batizado({ batizado }: { batizado: BatizadoType }) {
       </div>
 
       <ul className="mb-2">
-        {batizado.batizandos.map((b) => (
+        {batizado.catecumenos.map((b) => (
           <li
             className="flex gap-1 items-center border-b border-neutral-300 p-2"
             key={b.nome}>

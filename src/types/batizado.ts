@@ -6,5 +6,5 @@ export type BatizadoType = {
     marido: string;
     mulher: string;
   };
-  batizandos: Array<{ nome: string }>;
+  catecumenos: Array<{ nome: string }>;
 };

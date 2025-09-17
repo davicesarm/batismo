@@ -1,4 +1,4 @@
-import Usuarios from "./Usuarios";
+import Usuarios from "./components/Usuarios";
 import { FaUserPlus, FaHome } from "react-icons/fa";
 
 export default function AdminPage() {
