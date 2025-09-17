@@ -36,9 +36,6 @@ export default function UsuarioTable({
             <th scope="col" className="p-2 sm:px-4 sm:py-3">
               Cargo
             </th>
-            <th scope="col" className="p-2 sm:px-4 sm:py-3">
-              <span className="sr-only">Excluir</span>
-            </th>
           </tr>
         </thead>
         <tbody>
@@ -73,15 +70,6 @@ export default function UsuarioTable({
               </td>
               <td title="Cargo" className="p-2 sm:p-4 capitalize">
                 {usuario.cargo}
-              </td>
-
-              <td className="p-2 sm:p-4">
-                <a
-                  title="Excluir"
-                  href="#"
-                  className="text-red-500 px-2 py-1 rounded-full w-fit hover:bg-neutral-200 flex items-center gap-2">
-                  <FaTrash />
-                </a>
               </td>
             </tr>
           ))}

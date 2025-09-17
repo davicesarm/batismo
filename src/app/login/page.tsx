@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Cookies from "js-cookie";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -26,7 +27,11 @@ export default function Login() {
 
     if (res.ok) {
       const data: LoginResponse = await res.json();
-      document.cookie = `accessToken=${data.accessToken}; path=/; max-age=${data.expiresIn}`; // 1 hour
+      // document.cookie = `accessToken=${data.accessToken}; path=/; max-age=${data.expiresIn}`; // 1 hour
+      Cookies.set("accessToken", data.accessToken, {
+        expires: data.expiresIn / 86400,
+      }); // 1 hour
+
       console.log("Login correto ✅");
       document.location.href = "/";
     } else {
