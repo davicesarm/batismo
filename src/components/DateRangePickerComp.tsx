@@ -7,14 +7,17 @@ import {
   Dialog,
   Group,
   Popover,
+  DateValue,
 } from "react-aria-components";
+
+import type { RangeValue } from "@react-types/shared";
 
 import { cn } from "@/lib/utils";
 import { RangeCalendar } from "@/components/ui/calendar-rac";
 import { DateInput, dateInputStyle } from "@/components/ui/datefield-rac";
 
 interface DateRangePickerCompProps {
-  onChange?: (range: any) => void;
+  onChange?: (value: RangeValue<DateValue> | null) => void;
 }
 
 export default function DateRangePickerComp({

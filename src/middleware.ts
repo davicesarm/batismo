@@ -1,29 +1,23 @@
 import { NextRequest, NextResponse, type MiddlewareConfig } from "next/server";
 
-const publicRoutes = [{ path: "/login", whenAuthenticated: "redirect" }];
+const publicRoutes = ["/login"];
+const authenticatedRedirectPath = "/";
+const loginPath = "/login";
 
 export function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
-  const publicRoute = publicRoutes.find((route) => route.path === path);
   const authenticated = request.cookies.get("accessToken");
+  const isPublicRoute = publicRoutes.includes(path);
 
-  if (!authenticated && publicRoute) {
-    return NextResponse.next();
-  }
-
-  if (!authenticated && !publicRoute) {
+  if (authenticated && isPublicRoute) {
     const redirectUrl = request.nextUrl.clone();
-    redirectUrl.pathname = "/login";
+    redirectUrl.pathname = authenticatedRedirectPath;
     return NextResponse.redirect(redirectUrl);
   }
 
-  if (
-    authenticated &&
-    publicRoute &&
-    publicRoute.whenAuthenticated === "redirect"
-  ) {
+  if (!authenticated && !isPublicRoute) {
     const redirectUrl = request.nextUrl.clone();
-    redirectUrl.pathname = "/";
+    redirectUrl.pathname = loginPath;
     return NextResponse.redirect(redirectUrl);
   }
 

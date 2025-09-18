@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Login - Batismo",
-  description: "Login - Batismo",
+  title: "Batismo",
+  description: "Batismo",
   icons: {
     icon: "/logo.png",
   },
