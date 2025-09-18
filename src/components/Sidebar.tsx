@@ -95,11 +95,10 @@ export default function Sidebar() {
 
       <button
         onClick={toggleSidebar}
-        className={`text-neutral-100 flex items-center gap-1 cursor-pointer fixed top-4 left-4 z-50 transition-all duration-300 ease-in-out text-xl p-2 rounded-full hover:bg-neutral-200/50 ${
+        className={`text-neutral-100 cursor-pointer fixed top-4 left-4 z-50 transition-all duration-300 ease-in-out text-xl p-2 rounded-full hover:bg-neutral-200/50 ${
           isOpen ? "hidden" : "block"
         }`}>
         <MdMenu className="text-3xl" />
-        <span className="font-bold">Menu</span>
       </button>
     </>
   );

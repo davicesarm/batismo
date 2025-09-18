@@ -14,6 +14,6 @@ export async function apiFetch(path: string, options: RequestInit = {}) {
       ...(options.headers || {}),
       Authorization: token ? `Bearer ${token}` : "",
     },
-    body: options.body ? JSON.stringify(options.body) : undefined,
+    body: options.body,
   });
 }

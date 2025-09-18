@@ -51,9 +51,9 @@ export default function Login() {
         <h1 className="text-neutral-600 text-center text-4xl mt-8">Login</h1>
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col gap-4 mx-4 my-12">
+          className="text-sm flex flex-col gap-4 mx-4 my-12">
           <input
-            className="text-xs inset-shadow-sm text-neutral-600 font-semibold border px-3 border-neutral-400 placeholder-shown:border-neutral-300 p-2 rounded-lg"
+            className="inset-shadow-sm text-neutral-600 font-semibold border px-3 border-neutral-400 placeholder-shown:border-neutral-300 p-2 rounded"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -61,20 +61,20 @@ export default function Login() {
           />
           <div className="flex flex-col">
             <input
-              className="text-xs inset-shadow-sm text-neutral-600 font-semibold border px-3 border-neutral-400 placeholder-shown:border-neutral-300 p-2 rounded-lg"
+              className="inset-shadow-sm text-neutral-600 font-semibold border px-3 border-neutral-400 placeholder-shown:border-neutral-300 p-2 rounded"
               type="password"
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
               placeholder="Password"
             />
             <a
-              className="text-right text-xs text-blue-400 hover:text-blue-500 underline mt-2 font-bold"
+              className="text-right text-xs text-blue-500 hover:text-blue-600 underline mt-2 font-bold"
               href="#">
               Esqueci a senha...
             </a>
           </div>
           <button
-            className="mt-4 bg-blue-400 text-white text-center border border-blue-500 hover:border-blue-600 hover:bg-blue-500 cursor-pointer text-xs p-2 font-bold rounded-lg"
+            className="mt-4 bg-blue-500 text-white text-center border border-blue-600 hover:border-blue-700 hover:bg-blue-600 cursor-pointer p-2 font-bold rounded"
             type="submit">
             Entrar
           </button>

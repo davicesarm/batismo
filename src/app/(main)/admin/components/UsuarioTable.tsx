@@ -4,9 +4,11 @@ import { FaEdit } from "react-icons/fa";
 export default function UsuarioTable({
   usuarios,
   casal,
+  onEdit, // Recebe a função como prop
 }: {
   usuarios: UsuarioType[];
   casal?: boolean;
+  onEdit: (usuario: UsuarioType) => void; // Define o tipo da prop
 }) {
   return (
     <div className="border border-neutral-300 relative overflow-x-auto rounded-lg">
@@ -44,12 +46,14 @@ export default function UsuarioTable({
               key={index}
               className="bg-white not-last:border-b border-neutral-200 hover:bg-neutral-100">
               <td className="p-2 sm:p-4">
-                <a
-                  title="Editar"
-                  href="#"
-                  className="text-blue-600 px-2 py-1 rounded-full w-fit hover:bg-neutral-200 flex items-center gap-2">
-                  <FaEdit />
-                </a>
+                {usuario.cargo !== "admin" && (
+                  <button
+                    title="Editar"
+                    onClick={() => onEdit(usuario)}
+                    className="cursor-pointer text-blue-600 px-2 py-1 rounded-full w-fit hover:bg-neutral-200 flex items-center gap-2">
+                    <FaEdit />
+                  </button>
+                )}
               </td>
               {casal ? (
                 <>

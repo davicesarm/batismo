@@ -73,7 +73,7 @@ export default function Batizados() {
         />
         <button
           title="Exportar"
-          className="cursor-pointer flex gap-1 items-center bg-blue-400 text-xs text-white p-2 rounded hover:bg-blue-500 transition">
+          className="cursor-pointer flex gap-1 items-center bg-blue-500 text-xs text-white p-2 rounded hover:bg-blue-500 transition">
           <FaFileDownload className="text-base sm:text-xs" />
           <span className="hidden sm:block">Exportar</span>
         </button>
