@@ -27,7 +27,6 @@ export default function Login() {
 
     if (res.ok) {
       const data: LoginResponse = await res.json();
-      // document.cookie = `accessToken=${data.accessToken}; path=/; max-age=${data.expiresIn}`; // 1 hour
       Cookies.set("accessToken", data.accessToken, {
         expires: data.expiresIn / 86400,
       }); // 1 hour
@@ -55,7 +54,7 @@ export default function Login() {
           className="flex flex-col gap-4 mx-4 my-12">
           <input
             className="text-xs inset-shadow-sm text-neutral-600 font-semibold border px-3 border-neutral-400 placeholder-shown:border-neutral-300 p-2 rounded-lg"
-            type="text"
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
