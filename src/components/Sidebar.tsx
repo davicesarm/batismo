@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { MdMenu, MdClose } from "react-icons/md";
+import { MdMenu, MdMenuOpen } from "react-icons/md";
+import { FaHome, FaUser, FaSignOutAlt } from "react-icons/fa";
 import Cookies from "js-cookie";
 
 export default function Sidebar() {
@@ -16,14 +17,19 @@ export default function Sidebar() {
     <>
       <aside
         className={`
-          shadow absolute h-screen border-r p-4 bg-neutral-50 z-50 transition-all duration-300 ease-in-out flex flex-col
-          ${isOpen ? "left-0" : "-left-64"}
+          shadow h-screen p-4 bg-neutral-700 z-50 flex flex-col
+          ${
+            isOpen
+              ? "left-0 absolute sm:relative"
+              : "-left-64 absolute transition-all duration-300 ease-in-out"
+          }
         `}>
-        <div className="flex justify-start items-center mb-4">
+        <div className="flex justify-between items-center mb-4 text-neutral-50">
+          <h1 className="text-xl font-bold">Batismo</h1>
           <button
             onClick={toggleSidebar}
-            className="cursor-pointer text-xl p-2 rounded hover:bg-neutral-300">
-            {isOpen && <MdClose />}
+            className="cursor-pointer text-2xl p-2 rounded hover:bg-neutral-300/50">
+            <MdMenuOpen />
           </button>
         </div>
 
@@ -32,25 +38,17 @@ export default function Sidebar() {
             <li className="mb-2">
               <Link
                 href="/"
-                className="flex items-center gap-2 text-blue-500 hover:underline">
-                🏠
-                {isOpen && <span>Home</span>}
+                className="text-sm font-semibold border-b border-neutral-500 p-2 flex items-center gap-4 text-neutral-200 hover:bg-neutral-400/50 hover:rounded">
+                <FaHome />
+                Batizados
               </Link>
             </li>
             <li className="mb-2">
               <Link
                 href="/admin"
-                className="flex items-center gap-2 text-blue-500 hover:underline">
-                👤
-                {isOpen && <span>Admin</span>}
-              </Link>
-            </li>
-            <li className="mb-2">
-              <Link
-                href="/login"
-                className="flex items-center gap-2 text-blue-500 hover:underline">
-                🔐
-                {isOpen && <span>Login</span>}
+                className="text-sm font-semibold border-b border-neutral-500 p-2 flex items-center gap-4 text-neutral-200 hover:bg-neutral-400/50 hover:rounded">
+                <FaUser />
+                Administração
               </Link>
             </li>
             <li>
@@ -59,9 +57,9 @@ export default function Sidebar() {
                   Cookies.remove("accessToken");
                   window.location.href = "/login";
                 }}
-                className="cursor-pointer mt-8 flex items-center gap-2 text-red-500 hover:underline">
-                🚪
-                {isOpen && <span>Sair</span>}
+                className="w-full cursor-pointer mt-8 text-sm font-semibold border-b border-red-400 p-2 flex items-center gap-4 text-red-400 hover:bg-red-400/30 hover:rounded">
+                <FaSignOutAlt />
+                Sair
               </button>
             </li>
           </ul>
@@ -95,7 +93,7 @@ export default function Sidebar() {
 
       <button
         onClick={toggleSidebar}
-        className={`text-neutral-100 cursor-pointer fixed top-4 left-4 z-50 transition-all duration-300 ease-in-out text-xl p-2 rounded-full hover:bg-neutral-200/50 ${
+        className={`text-neutral-100 cursor-pointer fixed top-4 left-4 z-40 transition-all duration-300 ease-in-out text-xl p-2 rounded-full hover:bg-neutral-200/50 ${
           isOpen ? "hidden" : "block"
         }`}>
         <MdMenu className="text-3xl" />
