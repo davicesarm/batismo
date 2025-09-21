@@ -30,9 +30,9 @@ export default function RootLayout({
     <html lang="pt-br">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-100`}>
-        <div className="flex">
+        <div className="sm:flex">
           <Sidebar />
-          <div className="flex-1">{children}</div>
+          <div className="sm:flex-1">{children}</div>
         </div>
       </body>
     </html>

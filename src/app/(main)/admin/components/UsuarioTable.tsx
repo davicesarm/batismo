@@ -4,11 +4,11 @@ import { FaEdit } from "react-icons/fa";
 export default function UsuarioTable({
   usuarios,
   casal,
-  onEdit, // Recebe a função como prop
+  onEdit,
 }: {
   usuarios: UsuarioType[];
   casal?: boolean;
-  onEdit: (usuario: UsuarioType) => void; // Define o tipo da prop
+  onEdit: (usuario: UsuarioType) => void;
 }) {
   return (
     <div className="border border-neutral-300 relative overflow-x-auto rounded-lg">

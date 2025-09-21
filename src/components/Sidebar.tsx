@@ -17,18 +17,16 @@ export default function Sidebar() {
     <>
       <aside
         className={`
-          shadow h-screen p-4 bg-neutral-700 z-50 flex flex-col
-          ${
-            isOpen
-              ? "left-0 absolute sm:relative"
-              : "-left-64 absolute transition-all duration-300 ease-in-out"
-          }
+          text-neutral-300 shrink-0 overflow-hidden absolute sm:sticky top-0 h-screen py-8 bg-neutral-900/50 sm:bg-neutral-800 shadow backdrop-blur-xl z-50 flex flex-col transition-all duration-300 ease-in-out sm:rounded-none rounded-r-xl
+          ${isOpen ? "w-72 px-8" : "w-0"}
         `}>
-        <div className="flex justify-between items-center mb-4 text-neutral-50">
-          <h1 className="text-xl font-bold">Batismo</h1>
+        <div className="flex justify-between items-center mb-4 pb-4">
+          <Link href="/" className="text-2xl font-bold">
+            Batismo
+          </Link>
           <button
             onClick={toggleSidebar}
-            className="cursor-pointer text-2xl p-2 rounded hover:bg-neutral-300/50">
+            className="cursor-pointer text-3xl p-2 rounded hover:bg-neutral-300/50">
             <MdMenuOpen />
           </button>
         </div>
@@ -38,15 +36,23 @@ export default function Sidebar() {
             <li className="mb-2">
               <Link
                 href="/"
-                className="text-sm font-semibold border-b border-neutral-500 p-2 flex items-center gap-4 text-neutral-200 hover:bg-neutral-400/50 hover:rounded">
+                className="text-sm font-semibold p-2 flex items-center gap-4 hover:bg-neutral-300/50 hover:rounded">
                 <FaHome />
                 Batizados
               </Link>
             </li>
             <li className="mb-2">
               <Link
+                href="/secretaria"
+                className="text-sm font-semibold p-2 flex items-center gap-4 hover:bg-neutral-300/50 hover:rounded">
+                <FaUser />
+                Secretaria
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link
                 href="/admin"
-                className="text-sm font-semibold border-b border-neutral-500 p-2 flex items-center gap-4 text-neutral-200 hover:bg-neutral-400/50 hover:rounded">
+                className="text-sm font-semibold p-2 flex items-center gap-4 hover:bg-neutral-300/50 hover:rounded">
                 <FaUser />
                 Administração
               </Link>
@@ -93,8 +99,8 @@ export default function Sidebar() {
 
       <button
         onClick={toggleSidebar}
-        className={`text-neutral-100 cursor-pointer fixed top-4 left-4 z-40 transition-all duration-300 ease-in-out text-xl p-2 rounded-full hover:bg-neutral-200/50 ${
-          isOpen ? "hidden" : "block"
+        className={`bg-blue-950 text-neutral-100 cursor-pointer fixed top-4 z-40 transition-all duration-300 ease-in-out text-xl p-2 rounded-full hover:bg-neutral-300/50 hover:text-blue-950 ${
+          isOpen ? "-left-12" : "left-4"
         }`}>
         <MdMenu className="text-3xl" />
       </button>

@@ -1,5 +1,3 @@
-// src/app/admin/components/Usuarios.js
-
 "use client";
 
 import { useEffect, useState } from "react";

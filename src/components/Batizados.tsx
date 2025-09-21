@@ -43,7 +43,7 @@ export default function Batizados() {
   }, [dateRange, batizados]);
 
   return (
-    <div className="max-w-sm mx-auto mt-8 p-2 gap-4 flex flex-col">
+    <div className="max-w-lg mx-auto p-2 gap-4 flex flex-col">
       <p className="text-center text-sm text-muted-foreground">
         Total de batizados: {batizadosFiltrados.length}
       </p>

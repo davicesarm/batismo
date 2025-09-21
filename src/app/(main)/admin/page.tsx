@@ -9,14 +9,14 @@ import { UsuarioType } from "@/types/usuario";
 
 export default function AdminPage() {
   const [isCadastrarModalOpen, setIsCadastrarModalOpen] = useState(false);
-  const [isEditarModalOpen, setIsEditarModalOpen] = useState(false); // Estado para o modal de edição
+  const [isEditarModalOpen, setIsEditarModalOpen] = useState(false);
   const [usuarioParaEditar, setUsuarioParaEditar] =
-    useState<UsuarioType | null>(null); // Estado para o usuário a ser editado
+    useState<UsuarioType | null>(null);
 
   const handleCloseModal = () => {
     setIsCadastrarModalOpen(false);
     setIsEditarModalOpen(false);
-    setUsuarioParaEditar(null); // Limpa o usuário do estado ao fechar
+    setUsuarioParaEditar(null);
   };
 
   const handleEditUsuario = (usuario: UsuarioType) => {
@@ -26,15 +26,16 @@ export default function AdminPage() {
 
   return (
     <>
-      <header className="flex flex-col items-center bg-blue-800 p-6 mx-auto text-white">
+      <header className="flex flex-col items-center bg-blue-950 pt-6 mx-auto text-white">
         <h1 className="text-2xl font-bold">Administração</h1>
         <h2 className="w-fit flex items-center gap-1 text-sm text-neutral-300">
           <FaUserPlus />
           <span>Cadastro de usuários</span>
         </h2>
+        <span className="border-t-3 border-blue-700 bg-neutral-100 h-8 w-full mt-6 rounded-t-xl"></span>
       </header>
 
-      <main>
+      <main className="mx-2">
         <div className="shadow-md bg-neutral-50 flex flex-col gap-4 border-l-blue-500 border-l-3 mx-auto mt-4 border border-neutral-300 p-2 sm:p-4 rounded-lg max-w-4xl">
           <button
             className="cursor-pointer flex items-center gap-1 w-fit text-sm px-2 py-1 rounded-full border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
@@ -75,7 +76,6 @@ export default function AdminPage() {
               onClick={handleCloseModal}>
               &times;
             </button>
-            {/* Passe o usuário selecionado como prop para o componente de edição */}
             <EditarUsuario usuario={usuarioParaEditar} />
           </div>
         </div>
