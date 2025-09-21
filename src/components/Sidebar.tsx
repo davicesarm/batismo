@@ -18,9 +18,9 @@ export default function Sidebar() {
       <aside
         className={`
           text-neutral-300 shrink-0 overflow-hidden fixed sm:sticky top-0 h-screen py-8 bg-neutral-900/80 sm:bg-neutral-800 shadow backdrop-blur-xl z-50 flex flex-col transition-all duration-300 ease-in-out sm:rounded-none rounded-r-xl
-          ${isOpen ? "w-72 px-8" : "w-0"}
+          ${isOpen ? "w-72 px-6" : "w-0"}
         `}>
-        <div className="flex justify-between items-center mb-4 pb-4">
+        <div className="flex justify-between items-center mb-6 pb-2 border-b border-neutral-400 ">
           <Link href="/" className="text-2xl font-bold">
             Batismo
           </Link>
@@ -36,7 +36,7 @@ export default function Sidebar() {
             <li className="mb-2">
               <Link
                 href="/"
-                className="text-sm font-semibold p-2 flex items-center gap-4 hover:bg-neutral-300/50 hover:rounded">
+                className="font-semibold p-2 flex items-center gap-4 hover:bg-neutral-300/50 hover:rounded">
                 <FaHome />
                 Batizados
               </Link>
@@ -44,7 +44,7 @@ export default function Sidebar() {
             <li className="mb-2">
               <Link
                 href="/secretaria"
-                className="text-sm font-semibold p-2 flex items-center gap-4 hover:bg-neutral-300/50 hover:rounded">
+                className="font-semibold p-2 flex items-center gap-4 hover:bg-neutral-300/50 hover:rounded">
                 <FaUser />
                 Secretaria
               </Link>
@@ -52,7 +52,7 @@ export default function Sidebar() {
             <li className="mb-2">
               <Link
                 href="/admin"
-                className="text-sm font-semibold p-2 flex items-center gap-4 hover:bg-neutral-300/50 hover:rounded">
+                className="font-semibold p-2 flex items-center gap-4 hover:bg-neutral-300/50 hover:rounded">
                 <FaUser />
                 Administração
               </Link>

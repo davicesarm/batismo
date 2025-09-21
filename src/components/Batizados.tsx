@@ -79,7 +79,7 @@ export default function Batizados() {
         </button>
       </div>
       <div className="flex flex-col gap-4">
-        {batizadosFiltrados.map((batizado: BatizadoType) => (
+        {batizadosFiltrados.map((batizado: BatizadoType, idx) => (
           <Batizado key={batizado.id} batizado={batizado} />
         ))}
       </div>

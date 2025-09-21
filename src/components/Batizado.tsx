@@ -23,7 +23,7 @@ export default function Batizado({ batizado }: { batizado: BatizadoType }) {
   });
 
   return (
-    <div className="border-l-3 border border-neutral-300 border-l-blue-400 flex flex-col gap-2 text-xs text-neutral-700 relative bg-neutral-50 rounded-xl p-4 shadow-md justify-between">
+    <div className="bg-neutral-50 border-l-3 border border-neutral-300 border-l-blue-400 flex flex-col gap-2 text-xs text-neutral-700 relative rounded-xl p-4 shadow-md justify-between">
       <div className="flex flex-col gap-2 w-full">
         <h2 className="font-medium flex justify-between w-full">
           <span className="flex gap-1 items-center rounded-full border border-neutral-300 shadow-xs px-2 py-1">
