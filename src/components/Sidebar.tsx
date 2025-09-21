@@ -17,7 +17,7 @@ export default function Sidebar() {
     <>
       <aside
         className={`
-          text-neutral-300 shrink-0 overflow-hidden absolute sm:sticky top-0 h-screen py-8 bg-neutral-900/50 sm:bg-neutral-800 shadow backdrop-blur-xl z-50 flex flex-col transition-all duration-300 ease-in-out sm:rounded-none rounded-r-xl
+          text-neutral-300 shrink-0 overflow-hidden fixed sm:sticky top-0 h-screen py-8 bg-neutral-900/80 sm:bg-neutral-800 shadow backdrop-blur-xl z-50 flex flex-col transition-all duration-300 ease-in-out sm:rounded-none rounded-r-xl
           ${isOpen ? "w-72 px-8" : "w-0"}
         `}>
         <div className="flex justify-between items-center mb-4 pb-4">

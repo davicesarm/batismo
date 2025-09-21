@@ -9,7 +9,7 @@ export default function AdminPage() {
           <FaDove />
           <span>Cadastro de batizados</span>
         </h2>
-        <span className="border-t-3 border-blue-700 bg-neutral-100 h-8 w-full mt-6 rounded-t-xl"></span>
+        <span className="border-t-3 border-indigo-500 bg-neutral-100 h-8 w-full mt-6 rounded-t-xl"></span>
       </header>
 
       <main className="mx-2"></main>
