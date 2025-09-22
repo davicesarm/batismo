@@ -1,14 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { MdMenu, MdMenuOpen } from "react-icons/md";
 import { FaHome, FaUser, FaSignOutAlt } from "react-icons/fa";
 import Cookies from "js-cookie";
+import { JwtPayload } from "@/types/jwtpayload";
+import * as jose from "jose";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(true);
+  const [scope, setScope] = useState<string | null>(null);
 
+  useEffect(() => {
+    const token = Cookies.get("accessToken");
+    const payload = token ? (jose.decodeJwt(token) as JwtPayload) : null;
+    setScope(payload?.scope ?? "");
+  }, []);
+
+  if (scope === null) return null; // ou um loading
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
@@ -41,22 +51,26 @@ export default function Sidebar() {
                 Batizados
               </Link>
             </li>
-            <li className="mb-2">
-              <Link
-                href="/secretaria"
-                className="font-semibold p-2 flex items-center gap-4 hover:bg-neutral-300/50 hover:rounded">
-                <FaUser />
-                Secretaria
-              </Link>
-            </li>
-            <li className="mb-2">
-              <Link
-                href="/admin"
-                className="font-semibold p-2 flex items-center gap-4 hover:bg-neutral-300/50 hover:rounded">
-                <FaUser />
-                Administração
-              </Link>
-            </li>
+            {(scope === "secretaria" || scope === "admin") && (
+              <li className="mb-2">
+                <Link
+                  href="/secretaria"
+                  className="font-semibold p-2 flex items-center gap-4 hover:bg-neutral-300/50 hover:rounded">
+                  <FaUser />
+                  Secretaria
+                </Link>
+              </li>
+            )}
+            {scope === "admin" && (
+              <li className="mb-2">
+                <Link
+                  href="/admin"
+                  className="font-semibold p-2 flex items-center gap-4 hover:bg-neutral-300/50 hover:rounded">
+                  <FaUser />
+                  Administração
+                </Link>
+              </li>
+            )}
             <li>
               <button
                 onClick={() => {
