@@ -1,4 +1,4 @@
-import Batizados from "@/components/Batizados";
+import Batizados from "@/app/(main)/(batizados)/components/Batizados";
 import { FaHome } from "react-icons/fa";
 
 export default function Home() {

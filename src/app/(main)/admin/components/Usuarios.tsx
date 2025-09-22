@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { UsuarioType } from "@/types/usuario";
 import UsuarioTable from "./UsuarioTable";
-import { apiFetch } from "@/fetchWrapper";
+import { apiFetch } from "@/lib/utils";
 
 export default function Usuarios({
   onEdit,

@@ -1,6 +1,6 @@
 "use client";
 
-import { apiFetch } from "@/fetchWrapper";
+import { apiFetch } from "@/lib/utils";
 import { UsuarioType } from "@/types/usuario";
 import { useState } from "react";
 
@@ -26,7 +26,6 @@ export default function CadastrarUsuario() {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    console.log("Submitting form data:", formData);
 
     try {
       const response = await apiFetch("/usuarios", {
@@ -67,6 +66,7 @@ export default function CadastrarUsuario() {
           required>
           <option value="casal">Casal</option>
           <option value="secretaria">Secretaria</option>
+          <option value="coordenador">Coordenador</option>
         </select>
       </div>
 

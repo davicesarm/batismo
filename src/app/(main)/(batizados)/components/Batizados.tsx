@@ -3,9 +3,9 @@
 import { BatizadoType } from "@/types/batizado";
 import Batizado from "./Batizado";
 import { useState, useEffect } from "react";
-import DateRangePickerComp from "@/components/DateRangePickerComp";
+import DateRangePickerComp from "./DateRangePickerComp";
 import { FaFileDownload } from "react-icons/fa";
-import { apiFetch } from "@/fetchWrapper";
+import { apiFetch } from "@/lib/utils";
 
 export default function Batizados() {
   const [batizados, setBatizados] = useState<BatizadoType[]>([]);

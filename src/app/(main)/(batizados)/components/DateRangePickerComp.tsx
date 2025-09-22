@@ -13,8 +13,8 @@ import {
 import type { RangeValue } from "@react-types/shared";
 
 import { cn } from "@/lib/utils";
-import { RangeCalendar } from "@/components/ui/calendar-rac";
-import { DateInput, dateInputStyle } from "@/components/ui/datefield-rac";
+import { RangeCalendar } from "./calendar-rac";
+import { DateInput, dateInputStyle } from "./datefield-rac";
 
 interface DateRangePickerCompProps {
   onChange?: (value: RangeValue<DateValue> | null) => void;
