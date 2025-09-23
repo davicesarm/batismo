@@ -61,7 +61,7 @@ export default function Login() {
             Login incorreto
           </p>
           <input
-            className="outline-none inset-shadow-sm text-neutral-600 font-semibold border-neutral-400 border px-3 placeholder-shown:border-neutral-300 p-2 rounded"
+            className="text-neutral-600 font-semibold border-neutral-400 border px-3 placeholder-shown:border-neutral-300 p-2 rounded"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -70,7 +70,7 @@ export default function Login() {
           <div className="flex flex-col">
             <div className="relative">
               <input
-                className="w-full inset-shadow-sm text-neutral-600 font-semibold border px-3 border-neutral-400 placeholder-shown:border-neutral-300 p-2 rounded"
+                className="w-full text-neutral-600 font-semibold border px-3 border-neutral-400 placeholder-shown:border-neutral-300 p-2 rounded"
                 type={senhaVisible ? "text" : "password"}
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
@@ -80,7 +80,7 @@ export default function Login() {
                 type="button"
                 onClick={() => setSenhaVisible(!senhaVisible)}
                 className="cursor-pointer absolute top-1/2 right-3 -translate-y-1/2 text-neutral-500 hover:text-neutral-600">
-                {senhaVisible ? <FaEyeSlash /> : <FaEye />}
+                {senhaVisible ? <FaEye /> : <FaEyeSlash />}
               </button>
             </div>
             <a

@@ -1,5 +1,6 @@
-import Batizados from "@/app/(main)/(batizados)/components/Batizados";
+import CardsTab from "./components/CardsTab";
 import { FaHome } from "react-icons/fa";
+import Tabs from "./components/Tabs";
 
 export default function Home() {
   return (
@@ -14,7 +15,9 @@ export default function Home() {
       </header>
 
       <main>
-        <Batizados />
+        <Tabs />
+
+        {/* <CardsTab /> */}
       </main>
     </>
   );
