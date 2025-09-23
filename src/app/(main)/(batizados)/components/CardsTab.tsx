@@ -3,7 +3,7 @@
 import { BatizadoType } from "@/types/batizado";
 import Batizado from "./BatizadoCard";
 import { useState, useEffect } from "react";
-import DateRangePickerComp from "./DateRangePickerComp";
+import DateRangePickerComp from "./DateRangePicker/DateRangePickerComp";
 // import { FaFileDownload } from "react-icons/fa";
 import { apiFetch } from "@/lib/utils";
 import type { RangeValue } from "@react-types/shared";

@@ -104,7 +104,7 @@ export default function CalendarioTab({ batizados }: CalendarioTabProps) {
                         className={`h-10 w-full border mx-auto flex items-center justify-center transition-colors ${
                           batizadoDays.has(day)
                             ? "cursor-pointer bg-blue-500 hover:bg-blue-600 text-white"
-                            : "bg-neutral-100 cursor-not-allowed"
+                            : "bg-neutral-100/70 cursor-not-allowed"
                         }`}>
                         {day}
                       </button>
