@@ -56,6 +56,7 @@ export default function CadastrarUsuario() {
           htmlFor="cargo"
           className="text-xs font-medium text-neutral-700 mb-1">
           Cargo
+          <span className="text-red-500"> *</span>
         </label>
         <select
           id="cargo"
@@ -76,6 +77,7 @@ export default function CadastrarUsuario() {
             htmlFor="nome"
             className="text-xs font-medium text-neutral-700 mb-1">
             Nome
+            <span className="text-red-500"> *</span>
           </label>
           <input
             type="text"
@@ -96,6 +98,7 @@ export default function CadastrarUsuario() {
               htmlFor="marido"
               className="text-xs font-medium text-neutral-700 mb-1">
               Nome do Marido
+              <span className="text-red-500"> *</span>
             </label>
             <input
               type="text"
@@ -112,6 +115,7 @@ export default function CadastrarUsuario() {
               htmlFor="mulher"
               className="text-xs font-medium text-neutral-700 mb-1">
               Nome da Mulher
+              <span className="text-red-500"> *</span>
             </label>
             <input
               type="text"
@@ -131,6 +135,7 @@ export default function CadastrarUsuario() {
           htmlFor="email"
           className="text-xs font-medium text-neutral-700 mb-1">
           Email
+          <span className="text-red-500"> *</span>
         </label>
         <input
           type="email"
@@ -148,6 +153,7 @@ export default function CadastrarUsuario() {
           htmlFor="senha"
           className="text-xs font-medium text-neutral-700 mb-1">
           Senha
+          <span className="text-red-500"> *</span>
         </label>
         <input
           type="password"

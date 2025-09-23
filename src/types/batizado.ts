@@ -8,3 +8,9 @@ export type BatizadoType = {
   };
   catecumenos: Array<{ nome: string }>;
 };
+
+export type CadastrarBatizadoType = {
+  data: string;
+  celebrante: string | null;
+  catecumenos: Array<string>;
+};
