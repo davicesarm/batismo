@@ -20,7 +20,7 @@ export default function CadastrarBatizado() {
   const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
-    let { name, value } = event.target;
+    const { name, value } = event.target;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value === "" && name === "celebrante" ? null : value,

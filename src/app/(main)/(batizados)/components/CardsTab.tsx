@@ -5,7 +5,7 @@ import Batizado from "./BatizadoCard";
 import { useState, useEffect } from "react";
 import DateRangePickerComp from "./DateRangePicker/DateRangePickerComp";
 // import { FaFileDownload } from "react-icons/fa";
-import { apiFetch } from "@/lib/utils";
+// import { apiFetch } from "@/lib/utils";
 import type { RangeValue } from "@react-types/shared";
 import { DateValue } from "react-aria-components";
 
@@ -122,7 +122,7 @@ export default function CardsTab({ batizados }: { batizados: BatizadoType[] }) {
       </div>
 
       <div className="flex flex-col gap-4">
-        {batizadosFiltrados.map((batizado: BatizadoType, idx) => (
+        {batizadosFiltrados.map((batizado: BatizadoType) => (
           <Batizado key={batizado.id} batizado={batizado} />
         ))}
       </div>

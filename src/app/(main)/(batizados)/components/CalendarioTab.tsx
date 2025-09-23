@@ -105,7 +105,7 @@ export default function CalendarioTab({ batizados }: CalendarioTabProps) {
                     {day ? (
                       <button
                         onClick={() => {
-                          let batizado: BatizadoType = batizados.find((b) => {
+                          const batizado: BatizadoType = batizados.find((b) => {
                             const d = new Date(b.data);
                             return (
                               d.getDate() === day &&
