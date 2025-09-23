@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { BatizadoType } from "@/types/batizado";
+import { useModal } from "@/context/ModalContext";
+import BatizadoCard from "./BatizadoCard";
 
 interface CalendarioTabProps {
   batizados: BatizadoType[];
@@ -23,6 +25,7 @@ const months = [
 ];
 
 export default function CalendarioTab({ batizados }: CalendarioTabProps) {
+  const { openModal } = useModal();
   const today = new Date();
   const [month, setMonth] = useState(today.getMonth());
   const [year, setYear] = useState(today.getFullYear());
@@ -101,6 +104,19 @@ export default function CalendarioTab({ batizados }: CalendarioTabProps) {
                   <td key={cellIndex} className="">
                     {day ? (
                       <button
+                        onClick={() => {
+                          let batizado: BatizadoType = batizados.find((b) => {
+                            const d = new Date(b.data);
+                            return (
+                              d.getDate() === day &&
+                              d.getMonth() === month &&
+                              d.getFullYear() === year
+                            );
+                          })!;
+                          if (batizado) {
+                            openModal(<BatizadoCard batizado={batizado} />);
+                          }
+                        }}
                         className={`h-10 w-full border mx-auto flex items-center justify-center transition-colors ${
                           batizadoDays.has(day)
                             ? "cursor-pointer bg-blue-500 hover:bg-blue-600 text-white"

@@ -1,15 +1,19 @@
+"use client";
+
 import { UsuarioType } from "@/types/usuario";
 import { FaEdit } from "react-icons/fa";
+import { useModal } from "@/context/ModalContext";
+import EditarUsuario from "./EditarUsuario";
 
 export default function UsuarioTable({
   usuarios,
   casal,
-  onEdit,
 }: {
   usuarios: UsuarioType[];
   casal?: boolean;
-  onEdit: (usuario: UsuarioType) => void;
 }) {
+  const { openModal } = useModal();
+
   return (
     <div className="border border-neutral-300 relative overflow-x-auto rounded-lg">
       <table className="w-full text-xs sm:text-sm text-left rtl:text-right text-neutral-700">
@@ -49,7 +53,9 @@ export default function UsuarioTable({
                 {usuario.cargo !== "admin" && (
                   <button
                     title="Editar"
-                    onClick={() => onEdit(usuario)}
+                    onClick={() =>
+                      openModal(<EditarUsuario usuario={usuario} />)
+                    }
                     className="cursor-pointer text-blue-600 px-2 py-1 rounded-full w-fit hover:bg-neutral-200 flex items-center gap-2">
                     <FaEdit />
                   </button>

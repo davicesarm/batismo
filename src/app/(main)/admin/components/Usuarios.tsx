@@ -5,11 +5,7 @@ import { UsuarioType } from "@/types/usuario";
 import UsuarioTable from "./UsuarioTable";
 import { apiFetch } from "@/lib/utils";
 
-export default function Usuarios({
-  onEdit,
-}: {
-  onEdit: (usuario: UsuarioType) => void;
-}) {
+export default function Usuarios() {
   const [usuarios, setUsuarios] = useState<UsuarioType[]>([]);
 
   const fetchUsuarios = async () => {
@@ -33,7 +29,6 @@ export default function Usuarios({
         <h2 className="font-medium text-sm mb-2">Usuários especiais</h2>
         <UsuarioTable
           usuarios={usuarios.filter((usuario) => usuario.cargo !== "casal")}
-          onEdit={onEdit}
         />
       </div>
 
@@ -42,7 +37,6 @@ export default function Usuarios({
         <UsuarioTable
           usuarios={usuarios.filter((usuario) => usuario.cargo === "casal")}
           casal
-          onEdit={onEdit}
         />
       </div>
     </div>

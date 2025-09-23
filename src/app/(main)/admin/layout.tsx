@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ModalProvider } from "@/context/ModalContext";
 
 export const metadata: Metadata = {
   title: "Admin - Batismo",
@@ -13,5 +14,5 @@ export default function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return <ModalProvider>{children}</ModalProvider>;
 }
