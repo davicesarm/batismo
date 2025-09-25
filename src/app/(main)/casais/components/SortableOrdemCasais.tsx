@@ -26,7 +26,7 @@ export default function SortableOrdemCasais() {
     apiFetch(`/casais`)
       .then((res) => res.json())
       .then((data) => {
-        let ordered = data.sort((a: Casal, b: Casal) => a.ordem - b.ordem);
+        const ordered = data.sort((a: Casal, b: Casal) => a.ordem - b.ordem);
         setCasaisOriginal(ordered);
         setCasais([...ordered]);
       });
