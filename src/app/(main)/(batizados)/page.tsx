@@ -3,20 +3,16 @@
 import { FaDove, FaHome } from "react-icons/fa";
 import Tabs from "./components/Tabs";
 import { useEffect, useState } from "react";
-import { JwtPayload } from "@/types/jwtpayload";
-import Cookies from "js-cookie";
-import * as jose from "jose";
 import CadastrarBatizado from "./components/CadastrarBatizado";
 import { useModal } from "@/context/ModalContext";
+import { getScope } from "@/lib/utils";
 
 export default function Home() {
   const { openModal } = useModal();
   const [scope, setScope] = useState<string | null>(null);
 
   useEffect(() => {
-    const token = Cookies.get("accessToken");
-    const payload = token ? (jose.decodeJwt(token) as JwtPayload) : null;
-    setScope(payload?.scope ?? "");
+    setScope(getScope());
   }, []);
 
   return (
