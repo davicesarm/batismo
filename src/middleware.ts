@@ -9,7 +9,6 @@ const loginPath = "/login";
 // Rotas protegidas + roles permitidas
 const protectedRoutes: Record<string, string[]> = {
   "/admin": ["admin"],
-  "/secretaria": ["secretaria", "admin"],
 };
 
 export async function middleware(request: NextRequest) {
