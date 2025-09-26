@@ -1,13 +1,7 @@
-"use client";
-
 import Usuarios from "./components/Usuarios";
-import CadastrarUsuario from "./components/CadastrarUsuario";
 import { FaUserPlus } from "react-icons/fa";
-import { useModal } from "@/context/ModalContext";
 
 export default function AdminPage() {
-  const { openModal } = useModal();
-
   return (
     <>
       <header className="flex flex-col items-center bg-blue-950 pt-6 mx-auto text-white">
