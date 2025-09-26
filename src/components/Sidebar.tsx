@@ -81,12 +81,12 @@ export default function Sidebar() {
           </ul>
 
           <div>
-            <ul className="mt-4">
+            <ul className="my-8">
               <li className="text-xs text-neutral-500">
                 {isOpen && "© 2025 Batismo"}
               </li>
               <li className="text-xs text-neutral-500">
-                {isOpen && "Versão 1.0.0"}
+                {isOpen && "Versão beta-0.1.0"}
               </li>
               <li className="text-xs text-neutral-500">
                 {isOpen && (

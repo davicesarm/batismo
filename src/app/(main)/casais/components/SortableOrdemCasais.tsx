@@ -103,7 +103,7 @@ export default function SortableOrdemCasais() {
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
-                        className={`select-none text-neutral-700 font-medium cursor-grab flex my-1 gap-3 items-center justify-between border ${
+                        className={`select-none text-neutral-700 cursor-grab flex my-1 gap-3 items-center justify-between border ${
                           casal.idCasal !== casaisOriginal[index].idCasal
                             ? "border-blue-500"
                             : "border-neutral-300"

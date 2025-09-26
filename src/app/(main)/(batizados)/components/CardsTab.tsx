@@ -8,6 +8,13 @@ import DateRangePickerComp from "./DateRangePicker/DateRangePickerComp";
 // import { apiFetch } from "@/lib/utils";
 import type { RangeValue } from "@react-types/shared";
 import { DateValue } from "react-aria-components";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/Select";
 
 const months = [
   "Janeiro",
@@ -101,7 +108,26 @@ export default function CardsTab({ batizados }: { batizados: BatizadoType[] }) {
             ? "justify-between gap-2"
             : "justify-center"
         } flex sm:flex-row flex-col items-center`}>
-        <select
+        <Select
+          value={selectedMonth}
+          onValueChange={(value) => handleMonthChange(value)}>
+          <SelectTrigger
+            className={`${
+              selectedMonth === "custom" ? "w-3xs sm:flex-1" : "w-3xs"
+            } cursor-pointer rounded border border-neutral-300 bg-neutral-50 px-3 py-2 text-sm text-neutral-700`}>
+            <SelectValue placeholder="Meses" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="custom">Personalizado</SelectItem>
+            {months.map((month, i) => (
+              <SelectItem key={i} value={month}>
+                {month}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+
+        {/* <select
           className={`${
             selectedMonth === "custom" ? "w-3xs sm:flex-1" : "w-3xs"
           } cursor-pointer rounded border border-neutral-300 bg-neutral-50 px-3 py-2 text-sm text-neutral-700`}
@@ -115,7 +141,7 @@ export default function CardsTab({ batizados }: { batizados: BatizadoType[] }) {
               {month}
             </option>
           ))}
-        </select>
+        </select> */}
         {selectedMonth === "custom" && (
           <DateRangePickerComp onChange={handleDateRangeChange} />
         )}

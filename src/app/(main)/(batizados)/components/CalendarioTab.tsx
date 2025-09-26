@@ -4,6 +4,13 @@ import { useState } from "react";
 import { BatizadoType } from "@/types/batizado";
 import { useModal } from "@/context/ModalContext";
 import BatizadoCard from "./BatizadoCard";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/Select";
 
 interface CalendarioTabProps {
   batizados: BatizadoType[];
@@ -63,16 +70,20 @@ export default function CalendarioTab({ batizados }: CalendarioTabProps) {
   return (
     <div className="mx-2">
       <div className="flex justify-between items-center mb-2 gap-2">
-        <select
-          className="w-1/2 cursor-pointer rounded border border-neutral-300 bg-neutral-50 px-3 py-2 text-sm text-neutral-700"
-          value={month}
-          onChange={(e) => setMonth(Number(e.target.value))}>
-          {months.map((m, i) => (
-            <option key={i} value={i}>
-              {m}
-            </option>
-          ))}
-        </select>
+        <Select
+          value={months[month]}
+          onValueChange={(value) => setMonth(months.indexOf(value))}>
+          <SelectTrigger className="w-1/2 cursor-pointer rounded border border-neutral-300 bg-neutral-50 px-3 py-2 text-sm text-neutral-700">
+            <SelectValue placeholder="Meses" />
+          </SelectTrigger>
+          <SelectContent>
+            {months.map((month, i) => (
+              <SelectItem key={i} value={month}>
+                {month}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
 
         <input
           type="number"

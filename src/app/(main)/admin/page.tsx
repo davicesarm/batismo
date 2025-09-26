@@ -21,12 +21,6 @@ export default function AdminPage() {
 
       <main className="mx-2">
         <div className="shadow-md bg-neutral-50 flex flex-col gap-4 border-l-blue-500 border-l-3 mx-auto mt-4 border border-neutral-300 p-2 sm:p-4 rounded-lg max-w-4xl">
-          <button
-            className="cursor-pointer flex items-center gap-1 w-fit text-sm px-2 py-1 rounded-full border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
-            onClick={() => openModal(<CadastrarUsuario />)}>
-            <FaUserPlus />
-            <span>Cadastrar Usuário</span>
-          </button>
           <Usuarios />
         </div>
       </main>
