@@ -29,7 +29,7 @@ export default function OrdemCasais() {
         casais.map((casal, index) => (
           <li
             key={casal.idCasal}
-            className="text-neutral-700 font-medium flex my-1 gap-2 items-center border border-neutral-300 px-3 py-2 rounded">
+            className="text-neutral-700 flex my-1 gap-2 items-center border border-neutral-300 px-3 py-2 rounded">
             <span className="font-bold text-base text-neutral-500 w-4 text-right">
               {index + 1}.
             </span>

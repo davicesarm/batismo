@@ -5,7 +5,7 @@ import { UsuarioType } from "@/types/usuario";
 import { useState } from "react";
 
 export default function CadastrarUsuario() {
-  const [formData, setFormData] = useState<UsuarioType>({
+  const [formData, setFormData] = useState<Partial<UsuarioType>>({
     cargo: "casal",
     nome: "",
     marido: "",

@@ -48,7 +48,11 @@ export default function UsuarioTable({
           {usuarios.map((usuario, index) => (
             <tr
               key={index}
-              className="bg-white not-last:border-b border-neutral-200 hover:bg-neutral-100">
+              className={`${
+                usuario.inativo
+                  ? "bg-neutral-200 text-neutral-500 hover:bg-neutral-300 border-neutral-300"
+                  : "bg-white hover:bg-neutral-100 border-neutral-200"
+              } not-last:border-b `}>
               <td className="p-2 sm:p-4">
                 {usuario.cargo !== "admin" && (
                   <button
