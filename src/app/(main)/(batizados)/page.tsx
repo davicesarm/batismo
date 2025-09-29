@@ -1,20 +1,7 @@
-"use client";
-
-import { FaDove, FaHome } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import Tabs from "./components/Tabs";
-import { useEffect, useState } from "react";
-import CadastrarBatizado from "./components/CadastrarBatizado";
-import { useModal } from "@/context/ModalContext";
-import { getScope } from "@/lib/utils";
 
 export default function Home() {
-  const { openModal } = useModal();
-  const [scope, setScope] = useState<string | null>(null);
-
-  useEffect(() => {
-    setScope(getScope());
-  }, []);
-
   return (
     <>
       <header className="flex flex-col items-center bg-blue-900 pt-6 mx-auto text-white">
@@ -27,14 +14,6 @@ export default function Home() {
       </header>
 
       <main className="flex flex-col items-center gap-4">
-        {(scope === "secretaria" || scope === "admin") && (
-          <button
-            className="cursor-pointer flex items-center gap-1 w-fit text-sm px-2 py-1 rounded-full border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
-            onClick={() => openModal(<CadastrarBatizado />)}>
-            <FaDove />
-            <span>Criar Batizado</span>
-          </button>
-        )}
         <Tabs />
       </main>
     </>
