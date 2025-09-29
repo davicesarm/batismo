@@ -1,19 +1,45 @@
+/* 
+Componente antigo, mantido para caso precise de algo que foi removido
+*/
+
+"use client";
+
+import { useState } from "react";
 import { BatizadoType } from "@/types/batizado";
 import { useModal } from "@/context/ModalContext";
 import BatizadoCard from "./BatizadoCard";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/Select";
 
 interface CalendarioTabProps {
   batizados: BatizadoType[];
-  month: number;
-  year: number;
 }
 
-export default function CalendarioTab({
-  batizados,
-  month,
-  year,
-}: CalendarioTabProps) {
+const months = [
+  "Janeiro",
+  "Fevereiro",
+  "Março",
+  "Abril",
+  "Maio",
+  "Junho",
+  "Julho",
+  "Agosto",
+  "Setembro",
+  "Outubro",
+  "Novembro",
+  "Dezembro",
+];
+
+export default function CalendarioTab({ batizados }: CalendarioTabProps) {
   const { openModal } = useModal();
+  const today = new Date();
+  const [month, setMonth] = useState(today.getMonth());
+  const [year, setYear] = useState(today.getFullYear());
 
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const firstDayOfWeek = new Date(year, month, 1).getDay();
@@ -46,7 +72,31 @@ export default function CalendarioTab({
   });
 
   return (
-    <div className="mx-2 mt-2">
+    <div className="mx-2">
+      <div className="flex justify-between items-center mb-2 gap-2">
+        <Select
+          value={months[month]}
+          onValueChange={(value) => setMonth(months.indexOf(value))}>
+          <SelectTrigger className="w-1/2 cursor-pointer rounded border border-neutral-300 bg-neutral-50 px-3 py-2 text-sm text-neutral-700">
+            <SelectValue placeholder="Meses" />
+          </SelectTrigger>
+          <SelectContent>
+            {months.map((month, i) => (
+              <SelectItem key={i} value={month}>
+                {month}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+
+        <input
+          type="number"
+          className="w-1/2 focus:outline-none rounded border border-neutral-300 bg-neutral-50 px-3 py-1.5 text-sm text-neutral-700"
+          value={year}
+          onChange={(e) => setYear(Number(e.target.value))}
+        />
+      </div>
+
       <div className="flex justify-center pb-8 pt-2 bg-neutral-50 border-l-3 border border-neutral-300 border-l-blue-400 text-sm text-neutral-700 relative rounded-xl shadow-md">
         <table className="w-11/12 table-fixed border-collapse">
           <thead>

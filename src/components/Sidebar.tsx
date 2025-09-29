@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { MdMenu, MdMenuOpen } from "react-icons/md";
 import { FaHome, FaUser, FaSignOutAlt } from "react-icons/fa";
 import { FaUserGroup } from "react-icons/fa6";
@@ -9,14 +10,36 @@ import { getScope } from "@/lib/utils";
 import Cookies from "js-cookie";
 
 export default function Sidebar() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [scope, setScope] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     setScope(getScope());
   }, []);
 
-  if (scope === null) return null; // ou um loading
+  // Detectar se é dispositivo móvel
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640); // 640px é o breakpoint sm: do Tailwind
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Fechar sidebar quando a rota mudar (apenas em dispositivos móveis)
+  useEffect(() => {
+    if (isMobile) {
+      setIsOpen(false);
+    }
+  }, [pathname, isMobile]);
+
+  if (scope === null) return null;
+
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
@@ -86,7 +109,7 @@ export default function Sidebar() {
                 {isOpen && "© 2025 Batismo"}
               </li>
               <li className="text-xs text-neutral-500">
-                {isOpen && "Versão beta-0.1.0"}
+                {isOpen && "Versão beta-0.2.0"}
               </li>
               <li className="text-xs text-neutral-500">
                 {isOpen && (
