@@ -70,16 +70,26 @@ export default function CalendarioTab({
                     {day ? (
                       <button
                         onClick={() => {
-                          const batizado: BatizadoType = batizados.find((b) => {
-                            const d = new Date(b.data);
-                            return (
-                              d.getDate() === day &&
-                              d.getMonth() === month &&
-                              d.getFullYear() === year
+                          const batizadosFiltered: BatizadoType[] =
+                            batizados.filter((b) => {
+                              const d = new Date(b.data);
+                              return (
+                                d.getDate() === day &&
+                                d.getMonth() === month &&
+                                d.getFullYear() === year
+                              );
+                            })!;
+                          if (batizadosFiltered.length >= 1) {
+                            openModal(
+                              <div className="flex flex-col gap-4">
+                                {batizadosFiltered.map((batizado) => (
+                                  <BatizadoCard
+                                    key={batizado.id}
+                                    batizado={batizado}
+                                  />
+                                ))}
+                              </div>
                             );
-                          })!;
-                          if (batizado) {
-                            openModal(<BatizadoCard batizado={batizado} />);
                           }
                         }}
                         className={`h-10 w-full border mx-auto flex items-center justify-center transition-colors ${
