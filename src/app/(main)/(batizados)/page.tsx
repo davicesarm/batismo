@@ -1,5 +1,6 @@
 import { FaHome } from "react-icons/fa";
 import Tabs from "./components/Tabs";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -14,7 +15,14 @@ export default function Home() {
       </header>
 
       <main className="flex flex-col items-center gap-4">
-        <Tabs />
+        <Suspense
+          fallback={
+            <div className="text-center text-neutral-500 my-1">
+              Carregando...
+            </div>
+          }>
+          <Tabs />
+        </Suspense>
       </main>
     </>
   );

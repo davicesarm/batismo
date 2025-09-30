@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import CalendarioTab from "./CalendarioTab";
 import { BatizadoType } from "@/types/batizado";
 import { apiFetch } from "@/lib/utils";
 import CardsTab from "./CardsTab";
 import CadastrarBatizado from "./CadastrarBatizado";
 import { useModal } from "@/context/ModalContext";
-import { getScope } from "@/lib/utils";
+import { getScope, stripTime } from "@/lib/utils";
 import { FaCopy, FaDove } from "react-icons/fa";
 import {
   Select,
@@ -36,9 +37,17 @@ export default function Tabs() {
   const [batizados, setBatizados] = useState<BatizadoType[]>([]);
   const [loading, setLoading] = useState(false);
 
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
   const today = new Date();
-  const [month, setMonth] = useState(today.getMonth());
-  const [year, setYear] = useState(today.getFullYear());
+
+  const urlMes = Number(searchParams.get("mes"));
+  const initialMonth = urlMes && urlMes > 0 ? urlMes - 1 : today.getMonth();
+  const initialYear = Number(searchParams.get("ano")) || today.getFullYear();
+
+  const [month, setMonth] = useState(initialMonth);
+  const [year, setYear] = useState(initialYear);
 
   const [active, setActive] = useState(0);
   const tabs = ["Cards", "Calendário"];
@@ -93,13 +102,30 @@ export default function Tabs() {
   }, []);
 
   useEffect(() => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("mes", String(month + 1));
+    params.set("ano", String(year));
+    router.replace(`?${params.toString()}`, { scroll: false });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [month, year]);
+
+  useEffect(() => {
     setLoading(true);
     apiFetch(`/batizados?mes=${month + 1}&ano=${year}`, {
       cache: "no-store",
     })
       .then((res) => res.json())
-      .then((batizados) => {
-        setBatizados(batizados);
+      .then((batizadosRes) => {
+        const today = stripTime(new Date());
+
+        const futuros = batizadosRes.filter(
+          (b: BatizadoType) => stripTime(new Date(b.data)) >= today
+        );
+        const passados = batizadosRes.filter(
+          (b: BatizadoType) => stripTime(new Date(b.data)) < today
+        );
+
+        setBatizados([...futuros, ...passados]);
       })
       .finally(() => setLoading(false));
   }, [month, year]);

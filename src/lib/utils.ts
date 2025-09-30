@@ -29,3 +29,7 @@ export function getScope() {
   const payload = token ? (jose.decodeJwt(token) as JwtPayload) : null;
   return payload?.scope ?? "";
 }
+
+export function stripTime(date: Date) {
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+}
