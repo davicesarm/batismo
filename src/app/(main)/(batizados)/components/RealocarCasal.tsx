@@ -21,13 +21,24 @@ export default function RealocarCasal({
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await apiFetch(`/batizados/realocar`, {
-      method: "PATCH",
-      body: JSON.stringify({
-        idBatizado: batizado.id,
-        idCasal: selectedCasal?.idCasal,
-      }),
-    });
+    try {
+      const response = await apiFetch(`/batizados/realocar`, {
+        method: "PATCH",
+        body: JSON.stringify({
+          idBatizado: batizado.id,
+          idCasal: selectedCasal?.idCasal,
+        }),
+      });
+      if (response.ok) {
+        alert("Casal realocado com sucesso!");
+        window.location.reload();
+      } else {
+        alert(`Erro ao realocar: ${response.status}`);
+      }
+    } catch (error) {
+      console.error("Erro na requisição:", error);
+      alert("Ocorreu um erro ao conectar com o servidor.");
+    }
   };
 
   return (

@@ -12,7 +12,7 @@ import {
 } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { useModal } from "@/context/ModalContext";
-import { getScope } from "@/lib/utils";
+import { getScope, stripTime } from "@/lib/utils";
 import RealocarCasal from "./RealocarCasal";
 import EditarBatizado from "./EditarBatizado";
 
@@ -24,7 +24,10 @@ export default function Batizado({ batizado }: { batizado: BatizadoType }) {
     setScope(getScope());
   }, []);
 
-  const isPast = new Date(batizado.data) < new Date();
+  const dataBatizado = stripTime(new Date(batizado.data));
+  const today = stripTime(new Date());
+
+  const isPast = dataBatizado < today;
   const isBatizadoToday =
     new Date(batizado.data).toDateString() === new Date().toDateString();
 
