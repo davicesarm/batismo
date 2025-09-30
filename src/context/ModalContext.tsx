@@ -50,7 +50,7 @@ export function ModalProvider({ children }: ModalProviderProps) {
           className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
           onClick={closeModal}>
           <div
-            className="border border-neutral-300 border-l-blue-500 border-l-3 bg-neutral-50 rounded-lg p-6 max-w-lg w-full m-4 relative"
+            className="max-h-[600px] overflow-y-scroll border border-neutral-300 border-l-blue-500 border-l-3 bg-neutral-50 rounded-lg p-6 max-w-lg w-full m-4 relative"
             onClick={(e) => e.stopPropagation()}>
             <button
               className="cursor-pointer absolute top-0 right-2 text-gray-500 hover:text-red-700 text-2xl"
