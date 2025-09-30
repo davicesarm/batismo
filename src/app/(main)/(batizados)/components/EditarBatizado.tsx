@@ -2,7 +2,7 @@
 
 import { apiFetch } from "@/lib/utils";
 import { BatizadoType, CadastrarBatizadoType } from "@/types/batizado";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import dayjs from "dayjs";
 import { FaPlus, FaTrash, FaSave } from "react-icons/fa";
 
