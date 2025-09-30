@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation"; // 👈 importa isso
+import { useRouter, useSearchParams } from "next/navigation";
 import CalendarioTab from "./CalendarioTab";
 import { BatizadoType } from "@/types/batizado";
 import { apiFetch } from "@/lib/utils";
@@ -106,6 +106,7 @@ export default function Tabs() {
     params.set("mes", String(month + 1));
     params.set("ano", String(year));
     router.replace(`?${params.toString()}`, { scroll: false });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [month, year]);
 
   useEffect(() => {
