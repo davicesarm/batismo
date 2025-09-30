@@ -72,7 +72,7 @@ export default function Tabs() {
             `${b.catecumenos.map((c) => `- ${c.nome}`).join("\n")}\n` +
             `💍 *Casal:* ${b.casal.marido} e ${b.casal.mulher}\n` +
             `✝️ *Celebrante:* ${b.celebrante ?? "A definir"}\n` +
-            "───────────────────────────────"
+            "───────────────"
           );
         })
         .join("\n\n") +
@@ -117,7 +117,7 @@ export default function Tabs() {
         )}
         <button
           onClick={handleCopyToClipboard}
-          className="flex items-center gap-2 text-sm rounded-full border border-blue-500 px-2 py-1 hover:bg-blue-500 text-blue-500 hover:text-white cursor-pointer">
+          className="flex items-center gap-1 text-sm rounded-full border border-blue-500 px-2 py-1 bg-blue-500 hover:bg-blue-600 text-white cursor-pointer">
           <FaCopy />
           Copiar escala
         </button>

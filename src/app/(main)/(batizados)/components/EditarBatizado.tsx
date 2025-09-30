@@ -6,19 +6,15 @@ import { useEffect, useState } from "react";
 import dayjs from "dayjs";
 import { FaPlus, FaTrash, FaSave } from "react-icons/fa";
 
-export default function CadastrarBatizado({
+export default function EditarBatizado({
   batizado,
-  editar = false,
 }: {
-  batizado?: BatizadoType;
-  editar?: boolean;
+  batizado: BatizadoType;
 }) {
   const [formData, setFormData] = useState<CadastrarBatizadoType>({
-    data: batizado
-      ? dayjs(batizado.data).format("YYYY-MM-DDTHH:mm")
-      : dayjs().format("YYYY-MM-DDTHH:mm"),
-    celebrante: batizado ? batizado.celebrante : null,
-    catecumenos: batizado ? batizado.catecumenos.map((c) => c.nome) : [""],
+    data: dayjs(batizado.data).format("YYYY-MM-DDTHH:mm"),
+    celebrante: batizado.celebrante,
+    catecumenos: batizado.catecumenos.map((c) => c.nome),
   });
 
   const handleInputChange = (
@@ -64,6 +60,29 @@ export default function CadastrarBatizado({
     });
   };
 
+  const handleDelete = async () => {
+    const confirm = window.confirm(
+      "Tem certeza que deseja excluir este batizado? Esta ação não pode ser desfeita."
+    );
+    if (!confirm) return;
+
+    try {
+      const response = await apiFetch(`/batizados/${batizado.id}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        alert("Batizado excluído com sucesso!");
+        window.location.reload();
+      } else {
+        alert(`Erro ao excluir: ${response.status}`);
+      }
+    } catch (error) {
+      console.error("Erro na requisição:", error);
+      alert("Ocorreu um erro ao conectar com o servidor.");
+    }
+  };
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
@@ -81,20 +100,20 @@ export default function CadastrarBatizado({
     const submissionData = {
       ...formData,
       catecumenos: filteredCatecumenos,
-      ...(editar ? { id: batizado?.id } : {}),
     };
 
+    console.log("Submitting data:", submissionData);
     try {
-      const response = await apiFetch("/batizados", {
-        method: editar ? "PATCH" : "POST",
+      const response = await apiFetch(`/batizados/${batizado.id}`, {
+        method: "PATCH",
         body: JSON.stringify(submissionData),
       });
 
       if (response.ok) {
-        alert("Batizado cadastrado com sucesso!");
+        alert("Batizado editado com sucesso!");
         window.location.reload();
       } else {
-        alert(`Erro ao cadastrar: ${response.status}`);
+        alert(`Erro ao editar: ${response.status}`);
       }
     } catch (error) {
       console.error("Erro na requisição:", error);
@@ -107,7 +126,7 @@ export default function CadastrarBatizado({
       className="flex flex-col gap-4 rounded-lg p-2 max-w-4xl"
       onSubmit={handleSubmit}>
       <h2 className="text-center text-lg border-b pb-2 border-neutral-300 text-neutral-700 font-medium">
-        {editar ? "Editar" : "Cadastro de"} Batizado
+        Editar Batizado
       </h2>
 
       <div className="flex flex-col flex-1">
@@ -179,12 +198,21 @@ export default function CadastrarBatizado({
         </button>
       </div>
 
-      <button
-        type="submit"
-        className="flex items-center gap-1 justify-center cursor-pointer bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 text-sm">
-        <FaSave />
-        {editar ? "Salvar" : "Cadastrar Batizado"}
-      </button>
+      <div className="flex gap-2">
+        <button
+          type="submit"
+          className="flex items-center gap-1 justify-center w-1/2 cursor-pointer bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 text-xs sm:text-sm">
+          <FaSave />
+          Salvar alterações
+        </button>
+        <button
+          onClick={handleDelete}
+          type="button"
+          className="bg-red-500 hover:bg-red-600 flex items-center gap-1 justify-center w-1/2 cursor-pointer text-white px-4 py-2 rounded text-xs sm:text-sm">
+          <FaTrash />
+          Excluir batizado
+        </button>
+      </div>
     </form>
   );
 }

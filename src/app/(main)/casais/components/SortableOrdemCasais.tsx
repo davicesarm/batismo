@@ -21,15 +21,18 @@ type Casal = {
 export default function SortableOrdemCasais() {
   const [casaisOriginal, setCasaisOriginal] = useState<Casal[]>([]);
   const [casais, setCasais] = useState<Casal[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     apiFetch(`/casais`)
       .then((res) => res.json())
       .then((data) => {
         const ordered = data.sort((a: Casal, b: Casal) => a.ordem - b.ordem);
         setCasaisOriginal(ordered);
         setCasais([...ordered]);
-      });
+      })
+      .finally(() => setLoading(false));
   }, []);
 
   const handleDragEnd = (result: DropResult) => {
@@ -85,50 +88,56 @@ export default function SortableOrdemCasais() {
         </button>
       </div>
 
-      <DragDropContext onDragEnd={handleDragEnd}>
-        <Droppable droppableId="casais">
-          {(provided) => (
-            <ul
-              className="text-sm"
-              {...provided.droppableProps}
-              ref={provided.innerRef}>
-              {casais.length > 0 ? (
-                casais.map((casal, index) => (
-                  <Draggable
-                    key={casal.idCasal}
-                    draggableId={casal.idCasal.toString()}
-                    index={index}>
-                    {(provided, snapshot) => (
-                      <li
-                        ref={provided.innerRef}
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}
-                        className={`select-none text-neutral-700 cursor-grab flex my-1 gap-3 items-center justify-between border ${
-                          casal.idCasal !== casaisOriginal[index].idCasal
-                            ? "border-blue-500"
-                            : "border-neutral-300"
-                        } px-3 py-2 rounded ${
-                          snapshot.isDragging ? "bg-neutral-200" : ""
-                        }`}>
-                        <div className="flex items-center gap-2">
-                          <span className="font-bold text-base text-neutral-500 w-4 text-right">
-                            {index + 1}.
-                          </span>
-                          {casal.marido} e {casal.mulher}
-                        </div>
-                        <IoReorderThree className="text-lg" />
-                      </li>
-                    )}
-                  </Draggable>
-                ))
-              ) : (
-                <div>Carregando...</div>
-              )}
-              {provided.placeholder}
-            </ul>
-          )}
-        </Droppable>
-      </DragDropContext>
+      {loading ? (
+        <p className="text-center text-neutral-500 my-1">Carregando...</p>
+      ) : (
+        <DragDropContext onDragEnd={handleDragEnd}>
+          <Droppable droppableId="casais">
+            {(provided) => (
+              <ul
+                className="text-sm"
+                {...provided.droppableProps}
+                ref={provided.innerRef}>
+                {casais.length > 0 ? (
+                  casais.map((casal, index) => (
+                    <Draggable
+                      key={casal.idCasal}
+                      draggableId={casal.idCasal.toString()}
+                      index={index}>
+                      {(provided, snapshot) => (
+                        <li
+                          ref={provided.innerRef}
+                          {...provided.draggableProps}
+                          {...provided.dragHandleProps}
+                          className={`select-none text-neutral-700 cursor-grab flex my-1 gap-3 items-center justify-between border ${
+                            casal.idCasal !== casaisOriginal[index].idCasal
+                              ? "border-blue-500"
+                              : "border-neutral-300"
+                          } px-3 py-2 rounded ${
+                            snapshot.isDragging ? "bg-neutral-200" : ""
+                          }`}>
+                          <div className="flex items-center gap-2">
+                            <span className="font-bold text-base text-neutral-500 w-4 text-right">
+                              {index + 1}.
+                            </span>
+                            {casal.marido} e {casal.mulher}
+                          </div>
+                          <IoReorderThree className="text-lg" />
+                        </li>
+                      )}
+                    </Draggable>
+                  ))
+                ) : (
+                  <p className="text-center text-neutral-500 my-1">
+                    Nenhum casal encontrado...
+                  </p>
+                )}
+                {provided.placeholder}
+              </ul>
+            )}
+          </Droppable>
+        </DragDropContext>
+      )}
     </>
   );
 }
