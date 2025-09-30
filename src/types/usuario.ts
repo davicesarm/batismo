@@ -8,3 +8,10 @@ export type UsuarioType = {
   senha?: string;
   inativo: boolean;
 };
+
+export type Casal = {
+  idCasal: number;
+  marido: string;
+  mulher: string;
+  ordem: number;
+};

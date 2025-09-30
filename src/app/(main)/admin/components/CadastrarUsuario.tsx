@@ -35,6 +35,7 @@ export default function CadastrarUsuario() {
 
       if (response.ok) {
         alert("Usuário cadastrado com sucesso!");
+        window.location.reload();
       } else {
         alert(`Erro ao cadastrar: ${response.status}`);
       }

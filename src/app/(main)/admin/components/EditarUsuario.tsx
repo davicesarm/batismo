@@ -183,14 +183,14 @@ export default function EditarUsuario({
       <div className="flex gap-2">
         <button
           type="submit"
-          className="flex items-center gap-2 justify-center w-1/2 cursor-pointer bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 text-xs sm:text-sm">
+          className="flex items-center gap-1 justify-center w-1/2 cursor-pointer bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 text-xs sm:text-sm">
           <FaSave />
           Salvar alterações
         </button>
         <button
           onClick={handleToggleInactivate}
           type="button"
-          className={`flex items-center gap-2 justify-center w-1/2 cursor-pointer ${
+          className={`flex items-center gap-1 justify-center w-1/2 cursor-pointer ${
             usuario && usuario.inativo
               ? "bg-green-500 hover:bg-green-600"
               : "bg-red-500 hover:bg-red-600"

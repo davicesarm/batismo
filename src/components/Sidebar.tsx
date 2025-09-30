@@ -10,7 +10,7 @@ import { getScope } from "@/lib/utils";
 import Cookies from "js-cookie";
 
 export default function Sidebar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [scope, setScope] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
@@ -109,7 +109,7 @@ export default function Sidebar() {
                 {isOpen && "© 2025 Batismo"}
               </li>
               <li className="text-xs text-neutral-500">
-                {isOpen && "Versão beta-0.2.0"}
+                {isOpen && "Versão beta-0.3.0"}
               </li>
               <li className="text-xs text-neutral-500">
                 {isOpen && (
