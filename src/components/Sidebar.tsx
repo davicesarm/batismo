@@ -77,7 +77,7 @@ export default function Sidebar() {
                 href="/casais"
                 className="font-semibold p-2 flex items-center gap-4 hover:bg-neutral-300/50 hover:rounded">
                 <FaUserGroup />
-                Casais
+                Ordem dos Casais
               </Link>
             </li>
             {scope === "admin" && (
@@ -109,7 +109,7 @@ export default function Sidebar() {
                 {isOpen && "© 2025 Batismo"}
               </li>
               <li className="text-xs text-neutral-500">
-                {isOpen && "Versão beta-0.3.1"}
+                {isOpen && "Versão beta-0.3.2"}
               </li>
               <li className="text-xs text-neutral-500">
                 {isOpen && (
