@@ -109,7 +109,7 @@ export default function Sidebar() {
                 {isOpen && "© 2025 Batismo"}
               </li>
               <li className="text-xs text-neutral-500">
-                {isOpen && "Versão beta-0.3.2"}
+                {isOpen && "Versão beta-0.5.0"}
               </li>
               <li className="text-xs text-neutral-500">
                 {isOpen && (

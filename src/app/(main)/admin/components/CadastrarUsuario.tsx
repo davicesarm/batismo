@@ -11,7 +11,7 @@ export default function CadastrarUsuario() {
     marido: "",
     mulher: "",
     email: "",
-    senha: "",
+    // senha: "",
   });
 
   const handleInputChange = (
@@ -149,7 +149,7 @@ export default function CadastrarUsuario() {
         />
       </div>
 
-      <div className="flex flex-col flex-1">
+      {/* <div className="flex flex-col flex-1">
         <label
           htmlFor="senha"
           className="text-xs font-medium text-neutral-700 mb-1">
@@ -165,7 +165,7 @@ export default function CadastrarUsuario() {
           onChange={handleInputChange}
           required
         />
-      </div>
+      </div> */}
 
       <button
         type="submit"
