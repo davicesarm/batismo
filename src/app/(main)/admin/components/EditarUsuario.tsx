@@ -28,15 +28,15 @@ export default function EditarUsuario({
     event.preventDefault();
     console.log("Submitting form data:", formData);
 
-    const submitData = {
-      ...formData,
-      senha: formData.senha?.trim() ? formData.senha.trim() : null,
-    };
+    // const submitData = {
+    //   ...formData,
+    //   senha: formData.senha?.trim() ? formData.senha.trim() : null,
+    // };
 
     try {
       const response = await apiFetch(`/usuarios/${usuario?.id}/editar`, {
         method: "PATCH",
-        body: JSON.stringify(submitData),
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
@@ -162,7 +162,7 @@ export default function EditarUsuario({
           required
         />
       </div>
-
+      {/* 
       <div className="flex flex-col flex-1">
         <label
           htmlFor="senha"
@@ -178,7 +178,7 @@ export default function EditarUsuario({
           value={formData.senha ?? ""}
           onChange={handleInputChange}
         />
-      </div>
+      </div> */}
 
       <div className="flex gap-2">
         <button
