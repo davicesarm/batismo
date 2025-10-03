@@ -2,8 +2,15 @@
 
 import { apiFetch } from "@/lib/utils";
 import { useEffect, useState } from "react";
-import { IoReorderThree, IoWarning } from "react-icons/io5";
-import { FaSave, FaRedo, FaStream } from "react-icons/fa";
+import {
+  IoReorderThree,
+  //  IoWarning
+} from "react-icons/io5";
+import {
+  FaSave,
+  FaRedo,
+  // FaStream
+} from "react-icons/fa";
 import {
   DragDropContext,
   Droppable,
@@ -68,29 +75,29 @@ export default function SortableOrdemCasais() {
   };
 
   // Rearranjar escala dos batizados futuros com base na nova ordem dos casais
-  const handleRearrangeBaptisms = () => {
-    apiFetch("/batizados/refazer-escala", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-    }).then((res) => {
-      if (res.ok) {
-        alert(
-          "Escala dos batizados futuros rearranjada com sucesso com base na nova ordem dos casais!"
-        );
-        window.location.reload();
-      } else {
-        alert("Erro ao rearranjar a escala dos batizados futuros.");
-      }
-    });
-  };
+  // const handleRearrangeBaptisms = () => {
+  //   apiFetch("/batizados/refazer-escala", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //   }).then((res) => {
+  //     if (res.ok) {
+  //       alert(
+  //         "Escala dos batizados futuros rearranjada com sucesso com base na nova ordem dos casais!"
+  //       );
+  //       window.location.reload();
+  //     } else {
+  //       alert("Erro ao rearranjar a escala dos batizados futuros.");
+  //     }
+  //   });
+  // };
 
-  const isSameOrder = () => {
-    if (casais.length !== casaisOriginal.length) return false;
-    for (let i = 0; i < casais.length; i++) {
-      if (casais[i].idCasal !== casaisOriginal[i].idCasal) return false;
-    }
-    return true;
-  };
+  // const isSameOrder = () => {
+  //   if (casais.length !== casaisOriginal.length) return false;
+  //   for (let i = 0; i < casais.length; i++) {
+  //     if (casais[i].idCasal !== casaisOriginal[i].idCasal) return false;
+  //   }
+  //   return true;
+  // };
 
   const handleResetOrder = () => {
     setCasais([...casaisOriginal]);
@@ -105,7 +112,7 @@ export default function SortableOrdemCasais() {
           <FaRedo />
           <span>Resetar</span>
         </button>
-        <div className={`relative ${isSameOrder() ? "group" : ""}`}>
+        {/* <div className={`relative ${isSameOrder() ? "group" : ""}`}>
           <button
             onClick={handleRearrangeBaptisms}
             disabled={!isSameOrder()}
@@ -121,7 +128,7 @@ export default function SortableOrdemCasais() {
             (a partir de amanhã), usando a ordem da lista. A ordem dos casais
             será atualizada.
           </p>
-        </div>
+        </div> */}
         <button
           onClick={handleSaveOrder}
           className="cursor-pointer flex items-center gap-1 w-fit text-sm px-2 py-1 rounded-full border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white">

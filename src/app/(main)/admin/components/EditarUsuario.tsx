@@ -28,11 +28,6 @@ export default function EditarUsuario({
     event.preventDefault();
     console.log("Submitting form data:", formData);
 
-    // const submitData = {
-    //   ...formData,
-    //   senha: formData.senha?.trim() ? formData.senha.trim() : null,
-    // };
-
     try {
       const response = await apiFetch(`/usuarios/${usuario?.id}/editar`, {
         method: "PATCH",
@@ -162,23 +157,6 @@ export default function EditarUsuario({
           required
         />
       </div>
-      {/* 
-      <div className="flex flex-col flex-1">
-        <label
-          htmlFor="senha"
-          className="text-xs font-medium text-neutral-700 mb-1">
-          Senha
-          <span className="text-neutral-400"> (Opcional)</span>
-        </label>
-        <input
-          type="password"
-          id="senha"
-          name="senha"
-          className="border border-neutral-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={formData.senha ?? ""}
-          onChange={handleInputChange}
-        />
-      </div> */}
 
       <div className="flex gap-2">
         <button

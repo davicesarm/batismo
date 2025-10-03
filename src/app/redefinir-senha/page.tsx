@@ -74,6 +74,7 @@ export default function RedefinirSenha() {
         setError(errorData.message || "Erro ao redefinir senha");
       }
     } catch (err) {
+      console.error(err);
       setError("Erro de conexão. Tente novamente.");
     } finally {
       setLoading(false);
