@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MdMenu, MdMenuOpen } from "react-icons/md";
-import { FaHome, FaUser, FaSignOutAlt } from "react-icons/fa";
+import { FaHome, FaUser, FaSignOutAlt, FaLock } from "react-icons/fa";
 import { FaUserGroup } from "react-icons/fa6";
 import { getScope } from "@/lib/utils";
 import Cookies from "js-cookie";
@@ -109,7 +109,7 @@ export default function Sidebar() {
                 {isOpen && "© 2025 Batismo"}
               </li>
               <li className="text-xs text-neutral-500">
-                {isOpen && "Versão beta-0.4.0"}
+                {isOpen && "Versão beta-0.5.0"}
               </li>
               <li className="text-xs text-neutral-500">
                 {isOpen && (

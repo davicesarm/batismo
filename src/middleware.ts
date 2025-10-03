@@ -39,6 +39,11 @@ export async function middleware(request: NextRequest) {
     const payload = jose.decodeJwt(token!) as JwtPayload;
     const scope = payload.scope ?? "";
 
+    // Se usuário tem scope redefinir-senha mas não está na página de redefinir senha
+    if (scope === "redefinir-senha" && path !== "/redefinir-senha") {
+      return NextResponse.redirect(new URL("/redefinir-senha", request.url));
+    }
+
     // Checa permissões baseadas nas rotas configuradas
     for (const [route, allowedRoles] of Object.entries(protectedRoutes)) {
       if (path.startsWith(route)) {

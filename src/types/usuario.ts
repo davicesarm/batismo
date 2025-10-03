@@ -5,7 +5,6 @@ export type UsuarioType = {
   nome: string;
   marido: string;
   mulher: string;
-  senha?: string;
   inativo: boolean;
 };
 
