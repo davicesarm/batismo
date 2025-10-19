@@ -155,3 +155,19 @@ Acessível por navegador e responsiva a qualquer dispositivo conectado à intern
 | Validação de conflitos | Alto | Baixo | Baixo | Alta |
 | Exportação (PDF/Excel) | Médio | Médio | Baixo | Alta |
 | Gestão de usuários | Médio | Baixo | Baixo | Alta |
+
+---
+
+**Data**: 17 de outubro de 2025
+
+**Validado por:** 
+
+Francisco Viana | Jonas Sarmento | Davi Cesár
+
+francisco.viana@academico.ifpb.edu.br 
+davi.cesar@academico.ifpb.edu.br 
+jonas.sarmento@academico.ifpb.edu.br 
+
+---
+
+Criado em Outubro de 2025 por Francisco Viana | Jonas Sarmento | Davi Cesár
