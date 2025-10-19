@@ -7,6 +7,32 @@
 
 ---
 
+
+---
+
+## Sumário
+
+- [1. Introdução](#1-introdução)
+  - [1.1. Propósito](#11-propósito)
+  - [1.2. Escopo](#12-escopo)
+  - [1.3. Definições, Acrônimos e Abreviações](#13-definições-acrônimos-e-abreviações)
+- [2. Posicionamento](#2-posicionamento)
+  - [2.1. Oportunidade de Negócio](#21-oportunidade-de-negócio)
+  - [2.2. Declaração do Problema](#22-declaração-do-problema)
+  - [2.3. Declaração de Posição do Produto](#23-declaração-de-posição-do-produto)
+- [3. Descrição das Partes Interessadas e dos Usuários](#3-descrição-das-partes-interessadas-e-dos-usuários)
+  - [3.1. Resumo das Partes Interessadas](#31-resumo-das-partes-interessadas)
+  - [3.2. Perfis de Usuário](#32-perfis-de-usuário)
+  - [3.3. Necessidades Principais](#33-necessidades-principais)
+  - [3.4. Alternativas e Competição](#34-alternativas-e-competição)
+- [4. Visão Geral do Produto](#4-visão-geral-do-produto)
+  - [4.1. Perspectiva do Produto](#41-perspectiva-do-produto)
+  - [4.2. Premissas e Dependências](#42-premissas-e-dependências)
+- [5. Recursos do Produto](#5-recursos-do-produto)
+- [6. Restrições](#6-restrições)
+- [7. Apêndice 1 – Atributos de Recurso](#7-apêndice-1--atributos-de-recurso)
+
+---
 ## 1. Introdução
 
 ### 1.1. Propósito
@@ -164,8 +190,10 @@ Acessível por navegador e responsiva a qualquer dispositivo conectado à intern
 
 Francisco Viana | Jonas Sarmento | Davi Cesár
 
-francisco.viana@academico.ifpb.edu.br 
-davi.cesar@academico.ifpb.edu.br 
+francisco.viana@academico.ifpb.edu.br
+<br>
+davi.cesar@academico.ifpb.edu.br
+<br>
 jonas.sarmento@academico.ifpb.edu.br 
 
 ---
