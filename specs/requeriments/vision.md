@@ -7,6 +7,11 @@
 
 ---
 
+## Histórico de Revisões
+
+| Data       | Versão | Descrição                       | Autor(es)                             |
+|-------------|---------|----------------------------------|---------------------------------------|
+| 17/10/2025  | 1.0     | Criação do documento de visão   | Davi César, Jonas Sarmento, Francisco Viana |
 
 ---
 
