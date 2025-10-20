@@ -66,12 +66,28 @@ Principais funcionalidades:
 O sistema **não incluirá** o controle de outros sacramentos ou eventos religiosos.
 
 ### 1.3. Definições, Acrônimos e Abreviações
-- **SCEPB:** Sistema de Controle de Escala Pastoral para Batismos.  
-- **Aplicação Web Responsiva:** acessível via navegador e adaptável a diferentes dispositivos.  
-- **PWA:** Progressive Web App.  
-- **Casal:** voluntários responsáveis pelos batismos.  
-- **Administrador:** supervisor de usuários e configurações.  
-- **Secretaria:** responsável pelos cadastros e relatórios.  
+
+#### 📘 Definições
+
+| Termo | Definição |
+|--------|------------|
+| **SCEPB** | Sistema de Controle de Escala Pastoral para Batismos. |
+| **Escala Pastoral** | Organização de casais responsáveis por cada celebração de batismo. |
+| **Casal** | Membros voluntários da pastoral encarregados de auxiliar nas celebrações. |
+| **Secretaria Paroquial** | Funcionário ou voluntário responsável pelo agendamento e comunicação com os casais. |
+| **Administrador da Paróquia** | Responsável pela gestão geral e supervisão da pastoral. |
+| **Coordenador da Pastoral** | Líder que organiza a escala e acompanha os casais. |
+
+#### 🧩 Acrônimos e Abreviações
+
+| Sigla | Significado |
+|--------|-------------|
+| **PWA** | Progressive Web App (Aplicativo Web Progressivo) |
+| **API** | Application Programming Interface (Interface de Programação de Aplicações) |
+| **UI** | User Interface (Interface do Usuário) |
+| **UX** | User Experience (Experiência do Usuário) |
+| **BD** | Banco de Dados |
+| **SCEPB** | Sistema de Controle de Escala Pastoral para Batismos |
 
 ---
 
