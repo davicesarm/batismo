@@ -146,6 +146,8 @@ Acessível por navegador e responsiva a qualquer dispositivo conectado à intern
 - Serviços de terceiros para envio de notificações (e-mail, API de WhatsApp).  
 - Infraestrutura de hospedagem web.  
 
+
+![Arquitetura ambiental do sistema SCGP](../../assets/images/vision.drawio.png)
 ---
 
 ## 5. Recursos do Produto
