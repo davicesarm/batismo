@@ -184,6 +184,15 @@ Aplicação web independente, acessível por navegadores modernos, com interface
 | Residências | Layout responsivo | Alta | Facilidade de acesso |
 | Paróquia | Uso em rede Wi-Fi | Média | Visualização em reuniões |
 
+<br>
+
+![Arquitetura do Sistema](../../assets/images/vision.drawio.png)
+
+**Figura 1** - Arquitetura ambiental do sistema SCEPB
+
+Criado por Davi César, Jonas Sarmento e Francisco Viana no Draw.io
+
+
 ---
 
 ## 5. Recursos do Produto
@@ -203,6 +212,7 @@ Aplicação web independente, acessível por navegadores modernos, com interface
 - Tempo de resposta inferior a 2s.  
 - Navegadores compatíveis: Chrome, Firefox, Safari.  
 - Armazenamento seguro de dados.  
+
 
 ---
 
