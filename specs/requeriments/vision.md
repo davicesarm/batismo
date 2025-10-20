@@ -1,17 +1,19 @@
 # Documento de Visão
 
-**Versão:** 1.0  
-**Data:** 17/10/2025  
-**Descrição:** Versão inicial do documento de visão  
-**Autores:** Davi César, Jonas Sarmento, Francisco Viana
+**Versão:** 1.2 
+**Data:** 20/10/2025  
+**Descrição:** Versão atualizada do documento de visão  
+**Autores:** Davi César, Jonas Sarmento, Francisco Viana  
 
 ---
 
 ## Histórico de Revisões
 
-| Data       | Versão | Descrição                       | Autor(es)                             |
-|-------------|---------|----------------------------------|---------------------------------------|
-| 17/10/2025  | 1.0     | Criação do documento de visão   | Davi César, Jonas Sarmento, Francisco Viana |
+| Data       | Versão | Descrição                                                           | Autor(es)                               |
+|-------------|--------|----------------------------------------------------------------------|------------------------------------------|
+| 17/10/2025  | 1.0    | Criação do documento de visão                                       | Davi César, Jonas Sarmento, Francisco Viana |
+| 19/10/2025  | 1.1    | Inclusão das seções “Custo e Venda” e atualização de “Licenciamento e Instalação” | Davi César, Jonas Sarmento, Francisco Viana |
+| 19/10/2025  | 1.2    | Revisão do conteúdo do documento de visão                           | Davi César, Jonas Sarmento, Francisco Viana |
 
 ---
 
@@ -30,63 +32,69 @@
   - [3.2. Perfis de Usuário](#32-perfis-de-usuário)
   - [3.3. Necessidades Principais](#33-necessidades-principais)
   - [3.4. Alternativas e Competição](#34-alternativas-e-competição)
+  - [3.5. Descrição dos Stakeholders e dos Usuários](#35-descrição-dos-stakeholders-e-dos-usuários)
+  - [3.6. Usuários e Atores](#36-usuários-e-atores)
 - [4. Visão Geral do Produto](#4-visão-geral-do-produto)
   - [4.1. Perspectiva do Produto](#41-perspectiva-do-produto)
   - [4.2. Premissas e Dependências](#42-premissas-e-dependências)
+  - [4.3. Descrição do Ambiente de Uso](#43-descrição-do-ambiente-de-uso)
+  - [4.4. Necessidades Principais quanto ao Ambiente](#44-necessidades-principais-quanto-ao-ambiente)
 - [5. Recursos do Produto](#5-recursos-do-produto)
 - [6. Restrições](#6-restrições)
-- [7. Apêndice 1 – Atributos de Recurso](#7-apêndice-1--atributos-de-recurso)
+- [7. Custo e Venda](#7-custo-e-venda)
+- [8. Licenciamento e Instalação](#8-licenciamento-e-instalação)
+- [9. Apêndice 1 – Atributos de Recurso](#9-apêndice-1--atributos-de-recurso)
 
 ---
+
 ## 1. Introdução
 
 ### 1.1. Propósito
-Este documento tem como objetivo definir a visão do **Sistema de Controle de Escala Pastoral para Batismos**.  
-Serve como referência para a equipe de desenvolvimento e para as partes interessadas, descrevendo o problema a ser solucionado, o público-alvo, o escopo do projeto e os principais recursos do sistema.
+Este documento define a visão do **Sistema de Controle de Escala Pastoral para Batismos (SCEPB)**, servindo de base para o desenvolvimento e alinhamento entre a equipe e as partes interessadas.
 
 ### 1.2. Escopo
-O projeto consiste no desenvolvimento de uma **aplicação web responsiva** para automatizar o controle e a visualização da escala de casais responsáveis pelos batismos em uma paróquia.  
+O projeto visa criar uma **aplicação web responsiva** para automatizar o controle e visualização da escala de casais responsáveis pelos batismos em uma paróquia.
 
-O escopo inclui:
+Principais funcionalidades:
+- Gerenciamento de usuários e perfis.  
+- Cadastro e controle de casais e batismos.  
+- Alocação automática dos casais.  
+- Visualização da escala em calendário.  
+- Envio de notificações automáticas.  
+- Exportação de relatórios e histórico.
 
-- **Gerenciamento de Usuários:** Autenticação e controle de acesso baseado em perfis (Administrador, Secretaria, Casal).  
-- **Gestão de Cadastros:** Cadastro de casais da pastoral e celebrações de batismo.  
-- **Alocação de Escalas:** Atribuição automática e cíclica dos casais aos batismos, com opção de alteração manual.  
-- **Visualização de Agenda:** Exibição da escala em formato de calendário (diário, semanal e mensal) com filtros.  
-- **Sistema de Notificações:** Envio de alertas automáticos por e-mail, push e WhatsApp.  
-- **Relatórios e Histórico:** Exportação da escala em PDF/Excel e histórico de celebrações passadas.  
-
-O sistema **não contemplará** o controle de outros sacramentos ou eventos paroquiais.
+O sistema **não incluirá** o controle de outros sacramentos ou eventos religiosos.
 
 ### 1.3. Definições, Acrônimos e Abreviações
-- **Sistema:** Sistema de Controle de Escala Pastoral para Batismos.  
-- **Aplicação Web Responsiva:** Sistema acessível via navegador e adaptável a diferentes dispositivos.  
-- **Casal:** Membros voluntários da pastoral responsáveis pelos batismos.
+- **SCEPB:** Sistema de Controle de Escala Pastoral para Batismos.  
+- **Aplicação Web Responsiva:** acessível via navegador e adaptável a diferentes dispositivos.  
+- **PWA:** Progressive Web App.  
+- **Casal:** voluntários responsáveis pelos batismos.  
+- **Administrador:** supervisor de usuários e configurações.  
+- **Secretaria:** responsável pelos cadastros e relatórios.  
 
 ---
 
 ## 2. Posicionamento
 
 ### 2.1. Oportunidade de Negócio
-A gestão manual das escalas pastorais é demorada, sujeita a falhas humanas e dificulta a comunicação.  
-A automação desse processo otimiza o tempo da secretaria, aumenta a transparência e melhora a eficiência organizacional da paróquia.
+O gerenciamento manual de escalas é suscetível a erros e falta de comunicação. A automação trará eficiência e transparência ao processo pastoral.
 
 ### 2.2. Declaração do Problema
 
 | Aspecto | Descrição |
-|----------|------------|
-| **Problema** | Gestão manual e descentralizada das escalas de batismo |
-| **Afeta** | Secretaria paroquial e casais da pastoral |
-| **Impacto** | Erros de alocação, sobrecarga manual e falta de visão clara da agenda |
-| **Solução** | Sistema web centralizado que automatiza a alocação, evita conflitos e envia notificações automáticas |
+|----------|-----------|
+| **Problema** | Falta de um sistema automatizado para controle das escalas de batismo. |
+| **Afeta** | Secretaria e casais da pastoral. |
+| **Impacto** | Desorganização, retrabalho e falhas na comunicação. |
+| **Solução** | Sistema web automatizado com notificações e relatórios. |
 
 ### 2.3. Declaração de Posição do Produto
-
-**Para:** Secretaria paroquial e casais da pastoral do batismo  
-**Que necessitam de:** Um método eficiente e organizado para gerenciar e consultar as escalas  
-**O produto é:** Uma aplicação web responsiva que automatiza agendamentos e alocações  
-**Diferente de:** Planilhas, agendas e grupos de WhatsApp  
-**Nosso produto oferece:** Um processo automatizado, confiável e transparente, reduzindo o trabalho manual e prevenindo erros.
+**Para:** a Secretaria Paroquial e os Casais da Pastoral  
+**Que necessitam de:** uma forma confiável e prática de organizar as escalas  
+**O produto é:** um sistema web automatizado  
+**Diferente de:** planilhas e mensagens em grupo  
+**Nosso produto oferece:** gestão centralizada, notificações automáticas e transparência.
 
 ---
 
@@ -96,113 +104,160 @@ A automação desse processo otimiza o tempo da secretaria, aumenta a transparê
 
 | Parte Interessada | Descrição |
 |--------------------|-----------|
-| **Administrador da Paróquia** | Supervisiona secretaria e pastorais, buscando eficiência e organização. |
-| **Secretaria Paroquial** | Usuário principal: cadastra batismos e gerencia casais. |
-| **Coordenador da Pastoral** | Organiza os casais e suas alocações. |
-| **Casais da Pastoral** | Voluntários que precisam visualizar suas escalas e receber notificações. |
+| **Administrador da Paróquia** | Supervisiona e garante o bom funcionamento da pastoral. |
+| **Secretaria Paroquial** | Usuário principal que cadastra e gerencia escalas. |
+| **Coordenador da Pastoral** | Acompanha casais e corrige alocações. |
+| **Casais da Pastoral** | Usuários finais que consultam suas escalas. |
 
 ### 3.2. Perfis de Usuário
 
-| Perfil | Descrição | Responsabilidades | Habilidades Técnicas |
-|--------|------------|------------------|----------------------|
-| **Administrador** | Controle total do sistema | Gerenciar usuários e configurações gerais | Intermediária |
-| **Secretaria** | Responsável pelos batismos | Cadastrar, editar e excluir batismos | Básica |
-| **Coordenador** | Responsável pelos casais | Alocar casais e alterar ordem | Básica |
-| **Casal** | Usuário final | Consultar agenda e receber notificações | Mínima |
+| Perfil | Descrição | Responsabilidades | Habilidade Técnica |
+|--------|------------|------------------|--------------------|
+| **Administrador** | Gerencia o sistema | Supervisiona usuários e relatórios | Intermediária |
+| **Secretaria** | Principal usuária | Cadastra batismos e casais | Básica |
+| **Coordenador** | Gestor de casais | Acompanha alocações | Básica |
+| **Casal** | Usuário final | Consulta e recebe notificações | Mínima |
 
 ### 3.3. Necessidades Principais
 
-| Necessidade | Prioridade | Parte Interessada | Justificativa |
-|--------------|-------------|------------------|----------------|
-| Automatizar a alocação dos casais | Alta | Secretaria | Reduz trabalho manual e erros |
-| Acesso fácil à agenda de batismos | Alta | Casal, Secretaria | Garante clareza e evita faltas |
-| Impedir agendamentos conflitantes | Alta | Secretaria | Evita problemas logísticos |
-| Receber notificações automáticas | Alta | Casal | Melhora comunicação e lembretes |
-| Gerenciar usuários e perfis | Média | Administrador | Segurança e organização |
-| Exportar relatórios | Média | Secretaria, Administrador | Prestação de contas e planejamento |
+| Necessidade | Prioridade | Interessado | Justificativa |
+|--------------|-------------|--------------|----------------|
+| Automatizar a alocação | Alta | Secretaria | Reduz erros e retrabalho |
+| Notificações automáticas | Alta | Casais | Melhora a comunicação |
+| Visualização da agenda | Alta | Todos | Facilita a organização |
+| Relatórios exportáveis | Média | Secretaria | Controle e transparência |
 
 ### 3.4. Alternativas e Competição
-- **Planilhas:** Organização limitada e sem automação.  
-- **Agendas/Murais:** Acesso restrito e de difícil atualização.  
-- **Grupos de WhatsApp:** Comunicação desorganizada e descentralizada.  
+Planilhas e grupos de mensagens não oferecem controle, segurança ou automação.  
+O SCEPB se destaca por centralizar e simplificar todo o processo.
 
-O sistema se destaca por **integrar automação, notificações e controle centralizado** em uma única plataforma.
+### 3.5. Descrição dos Stakeholders e dos Usuários
+
+| Stakeholder / Usuário | Papel | Interesse | Expectativas |
+|------------------------|--------|------------|---------------|
+| **Administrador** | Supervisor geral | Organização | Supervisão e relatórios |
+| **Secretaria** | Operadora principal | Automação | Interface prática |
+| **Coordenador** | Gestor de casais | Controle de alocação | Ajustes rápidos |
+| **Casais** | Usuários finais | Consulta de escalas | Simplicidade |
+| **Equipe Técnica** | Desenvolvimento | Estabilidade | Documentação clara |
+
+### 3.6. Usuários e Atores
+
+| Ator | Tipo | Descrição | Interação |
+|------|------|------------|-----------|
+| **Administrador** | Primário | Supervisiona e gerencia o sistema | Acesso total |
+| **Secretaria** | Primário | Cadastra e gerencia escalas | Uso diário |
+| **Coordenador** | Secundário | Acompanha casais | Uso pontual |
+| **Casais** | Primário | Consultam escalas e notificações | Uso móvel |
+| **Sistema de Notificações** | Suporte | Envia mensagens automáticas | Em segundo plano |
+| **Banco de Dados** | Suporte | Armazena informações | Permanente |
 
 ---
 
 ## 4. Visão Geral do Produto
 
 ### 4.1. Perspectiva do Produto
-O sistema será uma aplicação web independente, desenvolvida para atender exclusivamente à pastoral do batismo.  
-Acessível por navegador e responsiva a qualquer dispositivo conectado à internet.
+Aplicação web independente, acessível por navegadores modernos, com interface responsiva e compatível com dispositivos móveis.
 
 ### 4.2. Premissas e Dependências
 **Premissas:**
-- Usuários possuem acesso à internet.  
-- Casais possuem e-mail e/ou WhatsApp válido.  
-- Secretaria mantém dados atualizados.  
+- Acesso à internet.  
+- Dados atualizados pela secretaria.  
 
 **Dependências:**
-- Serviços de terceiros para envio de notificações (e-mail, API de WhatsApp).  
-- Infraestrutura de hospedagem web.  
+- API de e-mail e WhatsApp.  
+- Servidor de hospedagem.  
 
+### 4.3. Descrição do Ambiente de Uso
 
-![Arquitetura ambiental do sistema SCGP](../../assets/images/vision.drawio.png)
+| Ambiente | Características | Usuários |
+|-----------|----------------|-----------|
+| Escritório Paroquial | Computadores e rede estável | Secretaria |
+| Residências dos Casais | Acesso móvel via navegador | Casais |
+| Reuniões Pastorais | Uso via Wi-Fi | Coordenadores |
+
+### 4.4. Necessidades Principais quanto ao Ambiente
+
+| Ambiente | Necessidade | Prioridade | Justificativa |
+|-----------|--------------|-------------|----------------|
+| Escritório Paroquial | Interface intuitiva | Alta | Eficiência administrativa |
+| Residências | Layout responsivo | Alta | Facilidade de acesso |
+| Paróquia | Uso em rede Wi-Fi | Média | Visualização em reuniões |
+
 ---
 
 ## 5. Recursos do Produto
-- Cadastro, edição e exclusão de usuários (admin, secretaria, casal).  
-- Login com e-mail e senha.  
-- Cadastro de casais da pastoral.  
-- Cadastro de batismos (data, horário, batizandos, celebrante).  
-- Impedir agendamento duplicado.  
-- Alocação automática e cíclica dos casais.  
-- Alteração manual de casais.  
-- Visualização de calendário (diário, semanal, mensal).  
-- Filtros por casal ou data.  
-- Notificações por e-mail, push e WhatsApp.  
-- Exportação (PDF/Excel).  
-- Histórico de batismos e alocações.  
-- Arquivamento automático.  
+- Login e controle de acesso.  
+- Cadastro de casais e batismos.  
+- Alocação automática e manual.  
+- Calendário interativo.  
+- Notificações automáticas.  
+- Exportação PDF/Excel.  
+- Histórico de celebrações.  
 - Backup automático.
 
 ---
 
 ## 6. Restrições
-- Aplicação web responsiva.  
-- Tempo de resposta inferior a 2 segundos.  
-- Compatível com Chrome, Firefox e Safari.  
+- Web responsiva.  
+- Tempo de resposta inferior a 2s.  
+- Navegadores compatíveis: Chrome, Firefox, Safari.  
 - Armazenamento seguro de dados.  
-- Interface simples e intuitiva.  
-- Duração de um batismo: **1 hora** (para bloqueio de agenda).
 
 ---
 
-## 7. Apêndice 1 – Atributos de Recurso
+## 7. Custo e Venda
+O **SCEPB** é um **projeto voluntário e sem fins lucrativos**.  
+Não há cobrança de licenças, mensalidades ou taxas.  
+Os custos se restringem à **manutenção da infraestrutura**, que inclui:
+- Hospedagem do servidor;  
+- Registro de domínio;  
+- Serviços de APIs externas (WhatsApp, e-mail).  
+
+Esses custos poderão ser assumidos pela equipe técnica ou pela própria paróquia.
+
+---
+
+## 8. Licenciamento e Instalação
+O produto **SCEPB (Sistema de Controle de Escala Pastoral para Batismos)** poderá ser licenciado por meio de uma **licença de uso**, fornecida pela **equipe desenvolvedora do sistema**.  
+Essa licença permitirá que a paróquia **instale e utilize o sistema em seus próprios servidores** ou em **ambientes de nuvem pública**, desde que atenda aos requisitos técnicos especificados no guia de instalação do produto.
+
+A **instalação do sistema** poderá ser realizada:
+- De forma **autônoma**, pela própria paróquia, seguindo o guia de instalação; ou  
+- Pela **equipe técnica desenvolvedora**, mediante solicitação ou parceria de suporte.
+
+O processo de instalação incluirá:
+- Configuração do servidor;  
+- Criação e inicialização da base de dados;  
+- Geração de credenciais de acesso seguras.
+
+A equipe técnica disponibilizará um **manual detalhado de instalação e configuração** e prestará **suporte remoto** caso seja necessário.
+
+Após a conclusão da instalação, o cliente (paróquia) receberá um **login e senha administrativos** para acessar o sistema e iniciar o uso de todas as suas funcionalidades.
+
+---
+
+## 9. Apêndice 1 – Atributos de Recurso
 
 | Recurso | Benefício | Esforço | Risco | Estabilidade |
-|----------|------------|----------|---------|--------------|
-| Alocação automática e cíclica | Alto | Médio | Baixo | Alta |
-| Notificações automáticas | Alto | Médio | Médio | Média |
-| Visualização de calendário | Alto | Médio | Baixo | Alta |
-| Validação de conflitos | Alto | Baixo | Baixo | Alta |
-| Exportação (PDF/Excel) | Médio | Médio | Baixo | Alta |
-| Gestão de usuários | Médio | Baixo | Baixo | Alta |
+|----------|------------|----------|--------|--------------|
+| Alocação automática | Reduz falhas | Médio | Baixo | Alta |
+| Notificações | Comunicação eficiente | Médio | Médio | Alta |
+| Visualização de calendário | Clareza e agilidade | Médio | Baixo | Alta |
+| Exportação PDF/Excel | Facilidade de relatórios | Médio | Baixo | Alta |
+| Gestão de usuários | Segurança e controle | Baixo | Baixo | Alta |
 
 ---
 
-**Data**: 17 de outubro de 2025
+**Data:** 20 de outubro de 2025  
 
-**Validado por:** 
+**Validado por:**  
+Francisco Viana | Jonas Sarmento | Davi César  
 
-Francisco Viana | Jonas Sarmento | Davi Cesár
-
-francisco.viana@academico.ifpb.edu.br
-<br>
-davi.cesar@academico.ifpb.edu.br
-<br>
-jonas.sarmento@academico.ifpb.edu.br 
+francisco.viana@academico.ifpb.edu.br  
+davi.cesar@academico.ifpb.edu.br  
+jonas.sarmento@academico.ifpb.edu.br  
 
 ---
 
-Criado em Outubro de 2025 por Francisco Viana | Jonas Sarmento | Davi Cesár
+Criado em Outubro de 2025 por Francisco Viana | Jonas Sarmento | Davi César
