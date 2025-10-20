@@ -276,13 +276,12 @@ O cliente (paróquia) receberá um **login e senha administrativos** para acessa
 ## 9. Apêndice 1 – Atributos de Recurso
 
 | Recurso | Benefício | Esforço | Risco | Estabilidade |
-|----------|------------|----------|--------|--------------|
-| Alocação automática | Reduz falhas | Médio | Baixo | Alta |
-| Notificações | Comunicação eficiente | Médio | Médio | Alta |
-| Visualização de calendário | Clareza e agilidade | Médio | Baixo | Alta |
-| Exportação PDF/Excel | Facilidade de relatórios | Médio | Baixo | Alta |
-| Gestão de usuários | Segurança e controle | Baixo | Baixo | Alta |
-
+|---|---|---|---|---|
+| **Alocação automática** | **Redução drástica de tempo de gestão.** Libera a secretaria de horas de trabalho manual. **Elimina erros humanos** (ex: esquecimentos, alocação dupla). **Garante justiça e transparência** no rodízio de casais, evitando sobrecarga ou privilégios. | Médio | Baixo | Alta |
+| **Notificações** | **Comunicação proativa e instantânea.** Reduz drasticamente o "não comparecimento" por esquecimento. **Elimina a necessidade de ligações** e mensagens manuais da secretaria, centralizando a comunicação na plataforma. | Médio | Médio | Alta |
+| **Visualização de calendário** | **Fonte única da verdade.** Visão clara e imediata das datas, horários e responsáveis. **Facilita o planejamento pessoal** dos casais e a **supervisão** dos coordenadores, permitindo rápida identificação de lacunas. | Médio | Baixo | Alta |
+| **Exportação PDF/Excel** | **Portabilidade e prestação de contas.** Gera documentos físicos para afixar no mural da paróquia. **Permite análises avançadas** de frequência e engajamento no Excel. **Cria um histórico oficial** para arquivo da administração paroquial. | Médio | Baixo | Alta |
+| **Gestão de usuários** | **Segurança e controle de acesso.** Protege dados pessoais dos casais (telefone, etc.). **Define papéis claros** (Administrador, Secretaria, Casal), garantindo que um usuário não possa alterar dados que não lhe competem. | Baixo | Baixo | Alta |
 ---
 
 **Data:** 20 de outubro de 2025  
