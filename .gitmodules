@@ -1,0 +1,6 @@
+[submodule "src/backend/batismo-api"]
+	path = src/backend/batismo-api
+	url = git@github.com:davicesarm/batismo-api.git
+[submodule "src/frontend/batismo-web"]
+	path = src/frontend/batismo-web
+	url = git@github.com:davicesarm/batismo-web.git
