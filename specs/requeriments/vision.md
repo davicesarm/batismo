@@ -67,7 +67,7 @@ O sistema **não incluirá** o controle de outros sacramentos ou eventos religio
 
 ### 1.3. Definições, Acrônimos e Abreviações
 
-#### 📘 Definições
+#### Definições
 
 | Termo | Definição |
 |--------|------------|
@@ -78,7 +78,7 @@ O sistema **não incluirá** o controle de outros sacramentos ou eventos religio
 | **Administrador da Paróquia** | Responsável pela gestão geral e supervisão da pastoral. |
 | **Coordenador da Pastoral** | Líder que organiza a escala e acompanha os casais. |
 
-#### 🧩 Acrônimos e Abreviações
+#### Acrônimos e Abreviações
 
 | Sigla | Significado |
 |--------|-------------|
