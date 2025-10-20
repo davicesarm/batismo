@@ -244,9 +244,9 @@ Esses custos poderão ser assumidos pela equipe técnica ou pela própria paróq
 
 ---
 
-## 8. Licenciamento e Instalação
-O produto **SCEPB (Sistema de Controle de Escala Pastoral para Batismos)** poderá ser licenciado por meio de uma **licença de uso**, fornecida pela **equipe desenvolvedora do sistema**.  
-Essa licença permitirá que a paróquia **instale e utilize o sistema em seus próprios servidores** ou em **ambientes de nuvem pública**, desde que atenda aos requisitos técnicos especificados no guia de instalação do produto.
+## 8. Licenciamento e Acesso
+O produto **SCEPB (Sistema de Controle de Escala Pastoral para Batismos)** é licenciado por meio de uma **licença de uso**, fornecida pela **equipe desenvolvedora do sistema**.  
+Essa licença permitirá que a paróquia utilize o sistema em **ambientes de nuvem**.
 
   O **acesso do sistema** poderá ser realizada:
 - De forma **autônoma**, pela própria paróquia, seguindo o guia de acesso; ou  
