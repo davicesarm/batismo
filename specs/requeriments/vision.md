@@ -233,14 +233,24 @@ Criado por Davi César, Jonas Sarmento e Francisco Viana no Draw.io
 ---
 
 ## 7. Custo e Venda
-O **SCEPB** é um **projeto voluntário e sem fins lucrativos**.  
-Não há cobrança de licenças, mensalidades ou taxas.  
-Os custos se restringem à **manutenção da infraestrutura**, que inclui:
-- Hospedagem do servidor;  
-- Registro de domínio;  
-- Serviços de APIs externas (WhatsApp, e-mail).  
+O **SCEPB** é um **projeto voluntário e sem fins lucrativos**. Não há cobrança de licenças, mensalidades ou taxas de uso pelo software.
 
-Esses custos poderão ser assumidos pela equipe técnica ou pela própria paróquia.
+Os únicos custos associados referem-se à **manutenção da infraestrutura** mínima necessária para a operação do sistema. Segue abaixo uma estimativa desses custos mensais:
+
+| Item | Descrição | Quantidade | Custo unitário (R$/mês) | Subtotal (R$/mês) |
+|---|---|:---:|:---:|:---:|
+| Servidor VPS (app + BD) | Servidor na nuvem para rodar a aplicação e o banco | 1 | 60,00 | 60,00 |
+| Registro de domínio | Domínio do sistema (ex.: scepbparoquia.com.br) | 1 | 5,00 | 5,00 |
+| API de WhatsApp/E-mail | Envio de notificações automáticas | 1 | 30,00 | 30,00 |
+| Armazenamento e backup | Backup periódico da base de dados e arquivos | 1 | 10,00 | 10,00 |
+| Monitoramento básico | Ferramentas simples de monitoramento/alertas | 1 | 15,00 | 15,00 |
+| **Subtotal mensal** | | | | **120,00** |
+| Reserva p/ imprevistos (10%) | Margem para variações de preço e serviços adicionais | | | 12,00 |
+| **Total estimado mensal** | | | | **132,00** |
+
+---
+
+Os valores apresentados acima representam uma estimativa e podem variar dependendo dos fornecedores de serviço e do volume de uso. Esses custos de infraestrutura poderão ser assumidos pela equipe técnica ou pela própria paróquia.
 
 ---
 
