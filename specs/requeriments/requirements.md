@@ -95,7 +95,6 @@ Exemplo: `RF0001`, `RNF0005`, `NR0010`
 - **[RF012]** - Como um Administrador ou Secretaria, eu gostaria de poder exportar a escala de batismos em PDF ou Excel.  
 - **[RF013]** - Como um Usuário, eu gostaria que o sistema mantivesse um histórico de todos os batismos e alocações passadas.  
 - **[RF014]** - O sistema deve arquivar automaticamente batismos anteriores à data atual.  
-- **[RF015]** - O sistema deve realizar backup automático dos dados em intervalos regulares.  
 
 ---
 
@@ -104,7 +103,7 @@ Exemplo: `RF0001`, `RNF0005`, `NR0010`
 ### Disponibilidade
 
 - **[RNF001]** - O sistema deve estar disponível 24/7/365.  
-- **[RNF002]** - O sistema deve realizar backup automático dos dados em intervalos regulares. *(Vinculado a RF015)*  
+- **[RNF002]** - O sistema deve realizar backup automático dos dados em intervalos regulares.
 
 ### Privacidade e Segurança
 
