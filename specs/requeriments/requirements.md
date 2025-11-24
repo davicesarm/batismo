@@ -81,51 +81,50 @@ Exemplo: `RF0001`, `RNF0005`, `NR0010`
 
 ## Requisitos Funcionais
 
-- **[RF001]** - Como um Administrador, eu gostaria de poder cadastrar, editar e excluir usuários, definindo seus perfis (Administrador, Secretaria, Coordenador, Casal).  
-- **[RF002]** - Como um Usuário, eu gostaria de realizar o login no sistema utilizando meu e-mail e senha.  
-- **[RF003]** - Como um Administrador, Secretaria ou Coordenador, eu gostaria de poder cadastrar casais, incluindo seus nomes e e-mails.  
-- **[RF004]** - Como um Administrador ou Secretaria, eu gostaria de poder cadastrar batismos informando data, horário, nomes dos batizandos e celebrante.  
-- **[RF005]** - O sistema deve impedir o cadastro de dois batismos para o mesmo dia e horário (regra de negócio RB02).  
-- **[RF006]** - O sistema deve alocar automaticamente o próximo casal da lista de escala ao cadastrar um novo batismo.  
-- **[RF007]** - O sistema deve manter a ordem cíclica de alocação dos casais.  
-- **[RF008]** - Como um Administrador, Secretaria ou Coordenador, eu gostaria de poder alterar manualmente o casal alocado a um batismo.  
-- **[RF009]** - Como um Usuário, eu gostaria de visualizar os batismos agendados nos modos diário, semanal ou mensal.  
-- **[RF010]** - Como um Usuário, eu gostaria de poder filtrar a visualização da agenda por casal ou data.  
-- **[RF011]** - O sistema deve enviar notificação ao casal alocado via e-mail, push ou WhatsApp.  
-- **[RF012]** - Como um Administrador ou Secretaria, eu gostaria de poder exportar a escala de batismos em PDF ou Excel.  
-- **[RF013]** - Como um Usuário, eu gostaria que o sistema mantivesse um histórico de todos os batismos e alocações passadas.  
-- **[RF014]** - O sistema deve arquivar automaticamente batismos anteriores à data atual.  
+- **[RF001]** – O sistema deve permitir que Administradores cadastrem, editem e excluam(mantenham) usuários, definindo seus perfis (Secretaria, Coordenador, Casal).
+- **[RF002]** – O sistema deve permitir que usuários realizem login utilizando e-mail e senha.
+- **[RF003]** – O sistema deve permitir que Administradores ou Secretaria cadastrem batismos informando data, horário, nomes dos batizandos e celebrante.
+- **[RF004]** – O sistema deve impedir o cadastro de batismos duplicados no mesmo dia e horário.
+- **[RF005]** – O sistema deve alocar automaticamente o próximo casal da lista de escala ao cadastrar um novo batismo.
+- **[RF006]** – O sistema deve manter uma ordem cíclica na alocação dos casais.
+- **[RF007]** – O sistema deve permitir que Administradores, Secretaria ou Coordenadores alterem manualmente o casal alocado a um batismo.
+- **[RF008]** – O sistema deve permitir que usuários visualizem os batismos agendados nos modos diário, semanal ou mensal.
+- **[RF009]** – O sistema deve permitir filtrar a visualização da agenda por casal ou por data.
+- **[RF010]** – O sistema deve enviar notificação ao casal alocado por e-mail, push ou WhatsApp.
+- **[RF011]** – O sistema deve permitir que o Usuário exporte a escala de batismos em Texto, PDF ou Planilha.
+- **[RF012]** – O sistema deve manter um histórico completo de batismos e alocações passadas.
+- **[RF013]** – O sistema deve arquivar automaticamente os batismos anteriores à data atual.
 
 ---
 
-## Requisitos Não-Funcionais
+## Requisitos Não Funcionais
 
 ### Disponibilidade
 
-- **[RNF001]** - O sistema deve estar disponível 24/7/365.  
-- **[RNF002]** - O sistema deve realizar backup automático dos dados em intervalos regulares.
+- **[RNF001]** – O sistema deve estar disponível para uso 24 horas /7 dias da semana/365 dias do ano.
+- **[RNF002]** – O sistema deve realizar backup automático dos dados em intervalos diarios.
 
 ### Privacidade e Segurança
 
-- **[RNF003]** - O sistema deve armazenar dados em ambiente seguro, com autenticação por perfil.  
-- **[RNF004]** - O acesso deve ser feito mediante autenticação (login por e-mail e senha).  
+- **[RNF003]** – O sistema deve armazenar todos os dados em ambiente seguro, com controle de acesso por perfis.
+- **[RNF004]** – O acesso ao sistema deve exigir autenticação por e-mail e senha.
 
 ### Usabilidade
 
-- **[RNF005]** - A interface deve ser simples, intuitiva e acessível para usuários com pouca experiência em tecnologia.  
+- **[RNF005]** – A interface deve ser simples, intuitiva e acessível para usuários com pouca experiência em tecnologia.
 
 ### Suportabilidade
 
-- **[RNF006]** - O sistema deve ser uma aplicação web responsiva (PWA), acessível em dispositivos móveis e desktops.  
+- **[RNF006]** – O sistema deve ser uma aplicação web responsiva (PWA), acessível em dispositivos móveis e desktops.
 
 ### Interoperabilidade
 
-- **[RNF007]** - O sistema deve integrar-se a serviços externos de e-mail e WhatsApp para envio de notificações. *(Vinculado a RF011)*  
+- **[RNF007]** – O sistema deve integrar-se a serviços externos de e-mail e WhatsApp para envio de notificações (associado ao RF011).
 
 ### Desempenho
 
-- **[RNF008]** - O tempo de resposta para operações comuns deve ser inferior a 2 segundos.  
+- **[RNF008]** – O sistema deve responder às operações comuns em menos de 2 segundos.
 
 ### Implementação
 
-- **[RNF009]** - O sistema deve ser desenvolvido como uma aplicação web independente (PWA), sem instalação de software nativo.  
+- **[RNF009]** – O sistema deve ser desenvolvido como uma aplicação web independente (PWA), sem necessidade de instalação de software nativo.
