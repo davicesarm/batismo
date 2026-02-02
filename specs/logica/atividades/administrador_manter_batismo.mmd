@@ -1,0 +1,6 @@
+flowchart TD
+    A([Inicio: Administrador.manterBatismo]) --> B[/Receber dados do batismo/]
+    B --> C[Chamar AgendamentoController.manterBatismo]
+    C --> D{Sucesso?}
+    D -- Nao --> Z([Retornar false])
+    D -- Sim --> Y([Retornar true])
