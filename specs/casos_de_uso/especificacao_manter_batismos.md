@@ -26,27 +26,27 @@ Este caso de uso permite ao ator realizar a gestão completa (cadastrar, atualiz
 
 1. O ator acessa a funcionalidade de "Manter Batismos".
 2. O sistema apresenta as opções de **cadastrar, alterar, consultar ou excluir** batismos.
-3. O ator seleciona a opção desejada.
+3. O ator seleciona a opção desejada (se selecionar "Excluir", seguir FA.03; se desejar alterar apenas o casal, seguir FA.04).
 4. O sistema solicita os dados do batismo (data, horário, local, observações).
-5. O ator informa os dados solicitados.
-6. O sistema valida a duplicidade de batismo para a data e horário informados.
+5. O ator informa os dados solicitados (se inválidos ou incompletos, seguir FA.01).
+6. O sistema valida a duplicidade de batismo para a data e horário informados (se houver conflito, seguir FA.02).
 7. O sistema registra ou atualiza o batismo no banco de dados.
 8. O sistema confirma a operação ao ator.
 
 
 **6. Fluxos Alternativos**
 
-* **6.1 Dados Inválidos ou Incompletos:** Se no passo 5 os dados forem inválidos, o sistema exibe erro e solicita correção .
+* **FA.01 Dados Inválidos ou Incompletos:** Se no passo 5 os dados forem inválidos, o sistema exibe erro e solicita correção .
 
-* **6.2 Batismo Duplicado:** Se no passo 6 for detectado conflito de horário/local, o sistema informa a duplicidade e permite ajuste ou cancelamento.
+* **FA.02 Batismo Duplicado:** Se no passo 6 for detectado conflito de horário/local, o sistema informa a duplicidade e permite ajuste ou cancelamento.
 
-* **6.3 Excluir Batismo:** 1. No passo 3, o ator seleciona a opção "Excluir".
+* **FA.03 Excluir Batismo:** 1. No passo 3, o ator seleciona a opção "Excluir".
 2. O sistema solicita a confirmação da exclusão.
 3. O ator confirma.
 4. O sistema verifica se há um casal alocado. Se sim, o sistema remove o vínculo e notifica o casal sobre o cancelamento da escala.
 5. O sistema remove o registro e confirma o sucesso.
 
-* **6.4 Alteração Manual de Casal (Integração com UC-ALOC-01):**
+* **FA.04 Alteração Manual de Casal (Integração com UC-ALOC-01):**
 1. Durante a alteração (passo 3), se o ator desejar modificar apenas o casal alocado (sem alterar os dados do batismo), o sistema direciona para o **UC-ALOC-01 (Alterar Casal Manualmente)**.
 
 2. O sistema exibe o casal atual e permite a seleção de um novo par disponível, registrando a troca no histórico de auditoria.
