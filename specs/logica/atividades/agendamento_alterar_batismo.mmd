@@ -1,0 +1,20 @@
+flowchart TD
+    A([Inicio: AgendamentoController.alterarBatismo]) --> B[/Receber id e novos dados/]
+    B --> C{Batismo existe?}
+    C -- Nao --> Z([Retornar false])
+
+    C -- Sim --> D{Alterar apenas casal?}
+    D -- Sim --> E[Chamar EscalaController.alterarCasalManual]
+    E --> F{Sucesso?}
+    F -- Nao --> Z
+    F -- Sim --> Y([Retornar true])
+
+    D -- Nao --> G{Dados validos?}
+    G -- Nao --> Z
+
+    G -- Sim --> H[AgendamentoController.validarDuplicidade]
+    H --> I{Duplicado?}
+    I -- Sim --> Z
+
+    I -- Nao --> J[(Atualizar batismo no BD)]
+    J --> Y

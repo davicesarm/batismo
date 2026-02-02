@@ -1,0 +1,6 @@
+flowchart TD
+    A([Inicio: Administrador.excluirBatismo]) --> B[/Receber id do batismo/]
+    B --> C[Chamar AgendamentoController.excluirBatismo]
+    C --> D{Sucesso?}
+    D -- Nao --> Z([Retornar false])
+    D -- Sim --> Y([Retornar true])

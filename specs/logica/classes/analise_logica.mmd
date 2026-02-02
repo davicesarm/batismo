@@ -11,13 +11,19 @@ classDiagram
 
     class Administrador {
         +gerenciarUsuarios(): void
-        +manterBatismo(dados: Batismo): bool
+        +cadastrarBatismo(dados: Batismo): bool
+        +alterarBatismo(dados: Batismo): bool
+        +excluirBatismo(id: int): bool
+        +consultarBatismo(filtros: string): List~Batismo~
     }
 
     class Secretaria {
         +exportarEscala(): File
-        +manterBatismo(dados: Batismo): bool
         +visualizarAgenda(periodo: string): List~Batismo~
+        +cadastrarBatismo(dados: Batismo): bool
+        +alterarBatismo(dados: Batismo): bool
+        +excluirBatismo(id: int): bool
+        +consultarBatismo(filtros: string): List~Batismo~
     }
 
     class Coordenador {
@@ -45,7 +51,10 @@ classDiagram
     }
 
     class AgendamentoController {
-        +manterBatismo(dados: Batismo): bool
+        +cadastrarBatismo(dados: Batismo): bool
+        +alterarBatismo(dados: Batismo): bool
+        +excluirBatismo(id: int): bool
+        +consultarBatismo(filtros: string): List~Batismo~
         -validarDuplicidade(data: Date, hora: Time): bool
         +visualizarAgenda(periodo: string): List~Batismo~
         +arquivarBatismosAntigos(): void
@@ -81,5 +90,5 @@ classDiagram
     EscalaController ..> NotificacaoService : usa
     AgendamentoController ..> EscalaController : solicita alocação
     HistoricoController ..> Batismo : consulta registros
-    Administrador ..> AgendamentoController : manter batismo
-    Secretaria ..> AgendamentoController : manter batismo/agenda
+    Administrador ..> AgendamentoController : cadastrar/alterar/excluir/consultar
+    Secretaria ..> AgendamentoController : cadastrar/alterar/excluir/consultar

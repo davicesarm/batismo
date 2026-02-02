@@ -1,0 +1,19 @@
+flowchart TD
+    A([Inicio: AgendamentoController.cadastrarBatismo]) --> B[/Receber dados do batismo/]
+    B --> C{Dados validos?}
+    C -- Nao --> Z([Retornar false])
+
+    C -- Sim --> D[AgendamentoController.validarDuplicidade]
+    D --> E{Duplicado?}
+    E -- Sim --> Z
+
+    E -- Nao --> F[(Persistir batismo no BD)]
+    F --> G{Alocacao automatica ativa?}
+
+    G -- Nao --> H[Manter batismo pendente]
+    H --> Y([Retornar true])
+
+    G -- Sim --> I[Chamar EscalaController.alocarCasalAuto]
+    I --> J{Casal retornado?}
+    J -- Nao --> H
+    J -- Sim --> Y

@@ -1,0 +1,11 @@
+flowchart TD
+    A([Inicio: AgendamentoController.excluirBatismo]) --> B[/Receber id do batismo/]
+    B --> C{Batismo existe?}
+    C -- Nao --> Z([Retornar false])
+
+    C -- Sim --> D{Ha casal alocado?}
+    D -- Sim --> E[Remover vinculo e notificar cancelamento]
+    D -- Nao --> F[Prosseguir exclusao]
+    E --> F
+    F --> G[(Remover registro do BD)]
+    G --> Y([Retornar true])

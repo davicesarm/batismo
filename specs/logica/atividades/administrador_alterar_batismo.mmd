@@ -1,0 +1,6 @@
+flowchart TD
+    A([Inicio: Administrador.alterarBatismo]) --> B[/Receber id e novos dados/]
+    B --> C[Chamar AgendamentoController.alterarBatismo]
+    C --> D{Sucesso?}
+    D -- Nao --> Z([Retornar false])
+    D -- Sim --> Y([Retornar true])
