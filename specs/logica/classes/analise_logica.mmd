@@ -1,0 +1,80 @@
+classDiagram
+    %% Classes de Usuários
+    class Usuario {
+        <<Abstract>>
+        -nome: string
+        -email: string
+        -senha: string
+        +login(email, senha): bool
+        +logout(): void
+    }
+
+    class Administrador {
+        +gerenciarUsuarios(): void
+    }
+
+    class Secretaria {
+        +exportarEscala(): File
+    }
+
+    class Coordenador {
+        +ajustarEscalaManual(): bool
+    }
+
+    class Casal {
+        -nomeMarido: string
+        -nomeEsposa: string
+        -telefone: string
+        -ultimoBatismo: Date
+        +visualizarEscala(): List~Batismo~
+        +confirmarLeitura(): void
+    }
+
+    %% Classes de Entidade e Controle
+    class Batismo {
+        -id: int
+        -data: Date
+        -horario: Time
+        -batizandos: List~string~
+        -celebrante: string
+        -status: string
+        +getDetalhes(): string
+    }
+
+    class AgendamentoController {
+        +manterBatismo(dados: Batismo): bool
+        -validarDuplicidade(data: Date, hora: Time): bool
+        +visualizarAgenda(periodo: string): List~Batismo~
+        +arquivarBatismosAntigos(): void
+    }
+
+    class EscalaController {
+        %% Implementa RF006 (Ordem Cíclica)
+        +alocarCasalAuto(batismo: Batismo): Casal?
+        +alterarCasalManual(batismo: Batismo, novoCasal: Casal): bool
+        -buscarProximoCiclico(): Casal
+        -validarDisponibilidade(casal: Casal, data: Date): bool
+    }
+
+    class NotificacaoService {
+        <<Interface>>
+        +enviar(destinatario: Usuario, msg: string): bool
+    }
+
+    class HistoricoController {
+        +consultarHistorico(): List~Registro~
+    }
+
+    %% Relacionamentos
+    Usuario <|-- Administrador
+    Usuario <|-- Secretaria
+    Usuario <|-- Coordenador
+    Usuario <|-- Casal
+
+    AgendamentoController ..> Batismo : cria/gerencia
+    EscalaController ..> Batismo : aloca casal em
+    EscalaController ..> Casal : seleciona
+    Batismo "0..*" --> "0..1" Casal : alocado para
+    EscalaController ..> NotificacaoService : usa
+    AgendamentoController ..> EscalaController : solicita alocação
+    HistoricoController ..> Batismo : consulta registros

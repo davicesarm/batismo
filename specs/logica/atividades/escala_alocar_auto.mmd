@@ -1,0 +1,23 @@
+flowchart TD
+    A([Inicio: EscalaController.alocarCasalAuto]) --> B[/Receber objeto Batismo/]
+    B --> C[Recuperar lista de casais ativos]
+    C --> D{Existem casais ativos?}
+
+    D -- Nao --> E[Marcar batismo como<br>Pendente de Alocacao]
+    E --> F[Notificar Secretaria]
+    F --> Z([Retornar null])
+
+    D -- Sim --> G[Ler indice do ultimo casal alocado]
+    G --> H[Definir proximo indice = indice + 1]
+    H --> I{Proximo casal<br>esta disponivel?}
+
+    I -- Nao: impedimento --> G
+
+    I -- Sim --> J[Selecionar casal]
+    J --> K[(Vincular casal ao batismo)]
+    K --> L[NotificacaoService.enviar]
+    L --> M[Atualizar ponteiro de ultimo alocado]
+    M --> Y([Retornar Casal])
+
+    Y([Retornar Casal])
+    Z([Retornar null])
