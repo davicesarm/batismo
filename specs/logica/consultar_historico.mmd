@@ -1,0 +1,5 @@
+flowchart TD
+    A([Inicio: consultarHistorico]) --> B[/Definir filtros: datas/casal/celebrante/]
+    B --> C[Consultar registros no banco]
+    C --> D[Exibir lista detalhada]
+    D --> Z([Retornar List<Registro>])

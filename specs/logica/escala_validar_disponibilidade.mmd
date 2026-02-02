@@ -1,0 +1,6 @@
+flowchart TD
+    A([Inicio: EscalaController.validarDisponibilidade]) --> B[/Receber casal e data/]
+    B --> C[Consultar compromissos do casal na data]
+    C --> D{Existe conflito?}
+    D -- Sim --> E([Retornar false])
+    D -- Nao --> F([Retornar true])

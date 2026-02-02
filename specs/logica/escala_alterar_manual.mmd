@@ -1,0 +1,18 @@
+flowchart TD
+    A([Inicio: EscalaController.alterarCasalManual]) --> B[/Receber batismo e novo casal/]
+    B --> C{Novo casal igual ao atual?}
+    C -- Sim --> Z([Retornar true])
+
+    C -- Nao --> D{Novo casal tem disponibilidade?}
+    D -- Nao --> E[Retornar erro: indisponivel]
+    E --> F([Retornar false])
+
+    D -- Sim --> G[Remover vinculo do casal antigo]
+    G --> H[(Vincular novo casal ao batismo)]
+    H --> I[(Registrar log no historico)]
+    I --> J[Notificar novo casal]
+    J --> K[Notificar casal antigo]
+    K --> Z
+
+    Z([Retornar true])
+    F([Retornar false])

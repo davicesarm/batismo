@@ -1,0 +1,6 @@
+flowchart TD
+    A([Inicio: NotificacaoService.enviar]) --> B[/Receber destinatario e mensagem/]
+    B --> C[Enviar notificacao]
+    C --> D{Envio bem-sucedido?}
+    D -- Nao --> E([Retornar false])
+    D -- Sim --> F([Retornar true])

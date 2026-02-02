@@ -1,0 +1,45 @@
+flowchart TD
+    A([Inicio: AgendamentoController.manterBatismo]) --> B[Selecionar opcao: Cadastrar/Alterar/Consultar/Excluir]
+    B --> C{Opcao}
+
+    C -- Excluir --> D[Solicitar confirmacao]
+    D --> E{Confirmado?}
+    E -- Nao --> Z([Retornar false])
+    E -- Sim --> F{Ha casal alocado?}
+    F -- Sim --> G[Remover vinculo e notificar cancelamento]
+    F -- Nao --> H[Prosseguir exclusao]
+    G --> H
+    H --> I[(Remover registro)]
+    I --> Y([Retornar true])
+
+    C -- Consultar --> J[Exibir dados do batismo]
+    J --> Y
+
+    C -- Alterar casal --> K[Chamar EscalaController.alterarCasalManual]
+    K --> L{Sucesso?}
+    L -- Nao --> Z
+    L -- Sim --> Y
+
+    C -- Cadastrar/Alterar --> M[/Receber dados do batismo/]
+    M --> N{Dados validos?}
+    N -- Nao --> O[Exibir erro]
+    O --> Z
+
+    N -- Sim --> P[AgendamentoController.validarDuplicidade]
+    P --> Q{Ja existe batismo no horario?}
+    Q -- Sim --> R[Erro: duplicado]
+    R --> Z
+
+    Q -- Nao --> S[(Persistir batismo no BD)]
+    S --> T{Alocacao automatica ativa?}
+    T -- Nao --> U[Manter batismo pendente]
+    U --> Y
+
+    T -- Sim --> V[Chamar EscalaController.alocarCasalAuto]
+    V --> W{Casal retornado?}
+    W -- Nao --> X[Manter batismo pendente]
+    X --> Y
+    W -- Sim --> Y
+
+    Y([Retornar true])
+    Z([Retornar false])

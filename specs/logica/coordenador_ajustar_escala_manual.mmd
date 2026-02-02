@@ -1,0 +1,8 @@
+flowchart TD
+    A([Inicio: Coordenador.ajustarEscalaManual]) --> B[/Selecionar batismo/]
+    B --> C[/Selecionar novo casal/]
+    C --> D[Chamar EscalaController.alterarCasalManual]
+    D --> E{Sucesso?}
+    E -- Nao --> F[Exibir erro]
+    F --> Z([Retornar false])
+    E -- Sim --> Y([Retornar true])

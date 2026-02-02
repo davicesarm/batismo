@@ -1,0 +1,6 @@
+flowchart TD
+    A([Inicio: AgendamentoController.validarDuplicidade]) --> B[/Receber data e hora/]
+    B --> C[Consultar batismos no mesmo horario]
+    C --> D{Encontrou batismo?}
+    D -- Sim --> E([Retornar true: duplicado])
+    D -- Nao --> F([Retornar false])

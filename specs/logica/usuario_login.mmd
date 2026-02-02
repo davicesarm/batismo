@@ -1,0 +1,14 @@
+flowchart TD
+    A([Inicio: Usuario.login]) --> B[/Receber email e senha/]
+    B --> C{Usuario escolheu<br>Esqueci minha senha?}
+    C -- Sim --> D[Solicitar recuperacao]
+    D --> E[Enviar link de redefinicao]
+    E --> Z([Retornar false])
+
+    C -- Nao --> F{Credenciais sao validas?}
+    F -- Nao --> G[Exibir Usuario ou senha incorretos]
+    G --> Z
+
+    F -- Sim --> H[Identificar perfil do usuario]
+    H --> I[Redirecionar para dashboard]
+    I --> Y([Retornar true])

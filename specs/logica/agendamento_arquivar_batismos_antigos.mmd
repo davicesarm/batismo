@@ -1,0 +1,5 @@
+flowchart TD
+    A([Inicio: AgendamentoController.arquivarBatismosAntigos]) --> B[Definir data limite]
+    B --> C[Localizar batismos anteriores a data limite]
+    C --> D[Marcar como arquivados]
+    D --> Z([Retornar void])

@@ -1,0 +1,19 @@
+flowchart TD
+    A([Inicio: Administrador.gerenciarUsuarios]) --> B[Exibir lista de usuarios]
+    B --> C{Acao do administrador}
+
+    C -- Adicionar --> D[/Informar dados do usuario/]
+    D --> E{Perfil e Casal?}
+    E -- Sim --> F[/Informar dados do conjuge e telefone/]
+    E -- Nao --> G[Validar email]
+    F --> G
+    G --> H{Email ja existe?}
+    H -- Sim --> I[Exibir erro e solicitar correcao]
+    I --> B
+    H -- Nao --> J[Salvar usuario]
+    J --> B
+
+    C -- Desativar casal --> K[Alterar status para Inativo]
+    K --> B
+
+    C -- Sair --> Z([Retornar void])

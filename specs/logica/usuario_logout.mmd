@@ -1,0 +1,10 @@
+flowchart TD
+    A([Inicio: Usuario.logout]) --> B{Sessao ativa?}
+
+    B -- Nao --> C[Encerrar sessao automaticamente]
+    C --> D[Exibir aviso de expiracao]
+    D --> Z([Retornar void])
+
+    B -- Sim --> E[Encerrar sessao]
+    E --> F[Redirecionar para tela de login]
+    F --> Z
